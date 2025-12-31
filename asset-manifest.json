@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/wedding-website/static/css/main.55bc2bbc.css",
-    "main.js": "/wedding-website/static/js/main.b81b022e.js",
-    "static/js/453.cd210156.chunk.js": "/wedding-website/static/js/453.cd210156.chunk.js",
-    "static/media/hero.png": "/wedding-website/static/media/hero.8f27397f06570a774ddd.png",
-    "static/media/mari_and_carlos.JPG": "/wedding-website/static/media/mari_and_carlos.b45066e100d9a99ac6e7.JPG",
-    "static/media/floral-backdrop-r.webp": "/wedding-website/static/media/floral-backdrop-r.4724226632f356e39af8.webp",
-    "static/media/floral-backdrop-l.webp": "/wedding-website/static/media/floral-backdrop-l.0451ec0d0a37cb3e2bd4.webp",
-    "static/media/Quicksand-VariableFont_wght.ttf": "/wedding-website/static/media/Quicksand-VariableFont_wght.7e79b7e7f9a882bcb2ab.ttf",
-    "static/media/Sacramento-Regular.ttf": "/wedding-website/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
-    "static/media/edwardianscriptitc.ttf": "/wedding-website/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
-    "static/media/separator.webp": "/wedding-website/static/media/separator.e01f9224918937f121ba.webp",
-    "index.html": "/wedding-website/index.html",
-    "main.55bc2bbc.css.map": "/wedding-website/static/css/main.55bc2bbc.css.map",
-    "main.b81b022e.js.map": "/wedding-website/static/js/main.b81b022e.js.map",
-    "453.cd210156.chunk.js.map": "/wedding-website/static/js/453.cd210156.chunk.js.map"
+    "main.css": "/static/css/main.6b047843.css",
+    "main.js": "/static/js/main.12cf5847.js",
+    "static/js/453.cd210156.chunk.js": "/static/js/453.cd210156.chunk.js",
+    "static/media/hero.png": "/static/media/hero.8f27397f06570a774ddd.png",
+    "static/media/mari_and_carlos.JPG": "/static/media/mari_and_carlos.b45066e100d9a99ac6e7.JPG",
+    "static/media/floral-backdrop-r.webp": "/static/media/floral-backdrop-r.4724226632f356e39af8.webp",
+    "static/media/floral-backdrop-l.webp": "/static/media/floral-backdrop-l.0451ec0d0a37cb3e2bd4.webp",
+    "static/media/Quicksand-VariableFont_wght.ttf": "/static/media/Quicksand-VariableFont_wght.7e79b7e7f9a882bcb2ab.ttf",
+    "static/media/Sacramento-Regular.ttf": "/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
+    "static/media/edwardianscriptitc.ttf": "/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
+    "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
+    "index.html": "/index.html",
+    "main.6b047843.css.map": "/static/css/main.6b047843.css.map",
+    "main.12cf5847.js.map": "/static/js/main.12cf5847.js.map",
+    "453.cd210156.chunk.js.map": "/static/js/453.cd210156.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.55bc2bbc.css",
-    "static/js/main.b81b022e.js"
+    "static/css/main.6b047843.css",
+    "static/js/main.12cf5847.js"
   ]
 }
