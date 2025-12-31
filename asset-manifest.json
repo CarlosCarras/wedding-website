@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/wedding-website/static/css/main.354f7df0.css",
+    "main.js": "/wedding-website/static/js/main.768f6934.js",
+    "static/js/453.cd210156.chunk.js": "/wedding-website/static/js/453.cd210156.chunk.js",
+    "static/media/hero.png": "/wedding-website/static/media/hero.8f27397f06570a774ddd.png",
+    "static/media/mari_and_carlos.JPG": "/wedding-website/static/media/mari_and_carlos.b45066e100d9a99ac6e7.JPG",
+    "static/media/floral-backdrop-r.webp": "/wedding-website/static/media/floral-backdrop-r.4724226632f356e39af8.webp",
+    "static/media/floral-backdrop-l.webp": "/wedding-website/static/media/floral-backdrop-l.0451ec0d0a37cb3e2bd4.webp",
+    "static/media/Quicksand-VariableFont_wght.ttf": "/wedding-website/static/media/Quicksand-VariableFont_wght.7e79b7e7f9a882bcb2ab.ttf",
+    "static/media/Sacramento-Regular.ttf": "/wedding-website/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
+    "static/media/edwardianscriptitc.ttf": "/wedding-website/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
+    "static/media/separator.webp": "/wedding-website/static/media/separator.e01f9224918937f121ba.webp",
+    "index.html": "/wedding-website/index.html",
+    "main.354f7df0.css.map": "/wedding-website/static/css/main.354f7df0.css.map",
+    "main.768f6934.js.map": "/wedding-website/static/js/main.768f6934.js.map",
+    "453.cd210156.chunk.js.map": "/wedding-website/static/js/453.cd210156.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.354f7df0.css",
+    "static/js/main.768f6934.js"
+  ]
+}
