@@ -61,14 +61,14 @@ function Home() {
                 <div className="backdrop right"/>
                 <section className="row-entry">
                     <h1 className="title">
-                        Marilyn and Carlos 
+                        Marilyn + Carlos 
                     </h1>
                     join us on
                     <h4> {DATE_STRING} </h4>
                     at
                     <h4> {LOCATION} </h4>
 
-                    <p> for our wedding ceremony. we'll see you in </p><br/>
+                    <p className="home-text"> for our wedding ceremony. we'll see you in </p><br/>
                     <FlipClockCountdown to={WEDDING_DATE} className='flip-clock'/>  
                 </section>
             </div>

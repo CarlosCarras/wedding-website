@@ -20,8 +20,6 @@
     --accent-color-2: #FFC000;
     --accent-color-filter: invert(15%) sepia(39%) saturate(4018%) hue-rotate(360deg) brightness(103%) contrast(106%);   /* credit: https://isotropic.co/tool/hex-color-to-css-filter/ */
     --link-color: #a9cdeb;
-    --list-even-color: rgba(255, 255, 255, 0.1);
-    --resume-page-color: rgba(255,255,255,0.8);
     --not-found-gradient: -webkit-linear-gradient(left, #FFC000, #ffa989);
 }
 

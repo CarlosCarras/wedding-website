@@ -41,7 +41,7 @@
 }
 
 .home-container .row .row-entry {
-    font-size: 24px;
+    font-size: 20px;
     padding: 2em 0;
     max-width: 1200px;
     width: 100%;
@@ -67,6 +67,7 @@
 
 .home-container .hero-image {
     width: 100vw;
+    display: block;
 }
 
 .home-container .separator-image {

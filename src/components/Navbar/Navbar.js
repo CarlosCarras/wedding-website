@@ -60,10 +60,6 @@ function Navbar({ sections = {} }) {
     // Close sidebar if clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
-            console.log(sidebarRef.current &&
-                !sidebarRef.current.contains(event.target) &&
-                hamburgerRef.current &&
-                !hamburgerRef.current.contains(event.target))
             if (
                 sidebarRef.current &&
                 !sidebarRef.current.contains(event.target) &&
