@@ -1,0 +1,76 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(255,255,255,0);
+    color: black;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    position: fixed;
+    left: 0;
+	right: 0;
+    z-index: 1000;
+}
+
+.navbar.bg-active {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    position: relative;
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: var(--accent-color);
+    border-radius: 999px;
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.3s ease;
+    pointer-events: none;
+}
+
+.navbar .menu > * {
+    font-size: 1.5em;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.navbar .menu > *:hover {
+    color: var(--accent-color);
+}
+
+.menu button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.navbar .hamburger-menu {
+    font-size: 2em;
+    margin: 0;
+    padding: 0 0.2em 0.1em;
+    color: white;
+}
+
+.menu button.active {
+    font-weight: 800;
+    color: var(--accent-color);
+}

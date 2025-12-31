@@ -1,0 +1,130 @@
+.home-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.home-container .backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    pointer-events: none;
+}
+
+.home-container .backdrop.left {
+    background-image: url('/src/assets/backdrops/floral-backdrop-l.webp');
+    background-position: left top;
+}
+
+.home-container .backdrop.right {
+    background-image: url('/src/assets/backdrops/floral-backdrop-r.webp');
+    background-position: right top;
+    left: auto;
+    right: 0;
+}
+
+.home-container .row {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.home-container .row .row-entry {
+    font-size: 24px;
+    padding: 2em 0;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.home-container h1 {
+    font-family: sacramento;
+    font-size: calc(28px + 7vw);
+    font-weight: 400;
+    margin: 0em 0 0.2em;
+    width: 100%;
+}
+
+.home-container h2 {
+    font-family: Sacramento, cursive;
+    font-size: 2em;
+    margin: 0.2em 0;
+}
+
+.home-container h4 {
+    margin: 0.5em 0;
+}
+
+.home-container .hero-image {
+    width: 100vw;
+}
+
+.home-container .separator-image {
+    width: 60vw;
+    user-select: none;
+}
+
+.home-container .button-list {
+    padding: 1em 0;
+    display: flex;
+    gap: 10px;
+}
+
+.home-container p.home-text {
+    padding: 0 10vw;
+}
+
+.flip-clock {
+    justify-content: center;
+    --fcc-flip-duration: 0.5s; /* transition duration when flip card */
+    --fcc-digit-block-width: calc(20px + 2vw); /* width of digit card */
+    --fcc-digit-block-height: 60px; /* height of digit card, highly recommend in even number */
+    --fcc-digit-block-radius: 5px; /* border radius of digit card */
+    /* --fcc-digit-block-spacing: 5px; /* space between blocks in each unit of time */
+    --fcc-digit-font-size: calc(12px + 2vw); /* font size of digit */
+    --fcc-digit-color: black; /* color of digit */
+    /* --fcc-label-font-size: 10px; /* font size of label */
+    /* --fcc-label-color: #ffffff; /* color of label */
+    --fcc-background: rgba(213, 227, 215, 0.95); /* background of digit card */
+    --fcc-divider-color: white; /* color of divider */
+    --fcc-divider-height: 1px; /* height of divider */
+    --fcc-separator-size: 6px; /* size of colon */
+    /* --fcc-separator-color: red; /* color of colon */
+}
+
+.gallery-container {
+    padding: 2em 0;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+    .home-container .separator-image {
+        width: 100vw;
+    }
+
+    .home-container p.home-text {
+        padding: 0 10vw;
+        font-size: 0.9em;
+    }
+}
+
+/* animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

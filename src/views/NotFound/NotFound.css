@@ -1,0 +1,26 @@
+.not-found-container {
+    height: 90vh;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+
+.not-found-container .not-found-title {
+    background: var(--not-found-gradient);
+    text-align: center;
+    margin: 0 0 3vh;
+    font-size: calc(2em + 10vw);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.not-found-container .not-found-caption {
+    color: var(--text-color)
+;    text-align: center;
+    font-size: calc(0.5rem + 1.5vw);;
+    margin-bottom: 5vh;
+}

@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+@font-face {
+  font-family: edwardianScript;
+  src: url(/src/assets/fonts/edwardianscriptitc.ttf); 
+}
+
+@font-face {
+  font-family: sacramento;
+  src: url(/src/assets/fonts/Sacramento-Regular.ttf);
+}
+
+@font-face {
+  font-family: quicksand;
+  src: url(/src/assets/fonts/Quicksand-VariableFont_wght.ttf);
+}

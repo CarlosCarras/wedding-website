@@ -1,0 +1,33 @@
+.expandable-arrow-container {
+    padding: 0.8em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+
+    --arrow-angle: 55deg;
+    --edge-offset: 9.8px;
+}
+
+.expandable-arrow-container .expandable-arrow-edge {
+    background-color: var(--accent-color);
+    border-radius: 0.25em;
+    width: 0.25em;
+    height: 2em;
+    transition: transform 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.expandable-arrow-container .expandable-arrow-edge.arrow-edge-left {
+    transform: translateX(calc(-1*var(--edge-offset))) rotate(calc(-1*var(--arrow-angle)));
+}
+
+.expandable-arrow-container .expandable-arrow-edge.arrow-edge-right {
+    transform: translateX(var(--edge-offset)) rotate(var(--arrow-angle));
+}
+
+.expandable-arrow-container.active .expandable-arrow-edge.arrow-edge-left {
+    transform: translateX(calc(-1*var(--edge-offset))) rotate(var(--arrow-angle));
+}
+
+.expandable-arrow-container.active .expandable-arrow-edge.arrow-edge-right {
+    transform: translateX(var(--edge-offset)) rotate(calc(-1*var(--arrow-angle)));
+}

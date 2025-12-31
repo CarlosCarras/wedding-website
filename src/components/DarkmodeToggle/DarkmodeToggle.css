@@ -1,0 +1,48 @@
+.dm-toggle-container {
+    height: 15px;
+    width: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgb(201, 201, 201);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.5s ease;
+}
+
+.dm-toggle-container.active {
+    background-color: black;
+}
+
+.dm-toggle-container .slider {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 0;
+    transition: margin-left 0.5s ease;
+}
+
+.dm-toggle-container.active .slider {
+    margin-left: 25px;
+}
+
+.dm-toggle-container img {
+    position: absolute;
+    height: 15px;
+    transition: opacity 0.5s ease;
+}
+
+.dm-toggle-container .sun { 
+    right: 10px;
+    opacity: 1;
+}
+
+.dm-toggle-container .moon { 
+    left: 10px;
+    opacity: 0 
+}
+
+.dm-toggle-container.active .sun { opacity: 0 }
+.dm-toggle-container.active .moon { opacity: 1 }

@@ -1,0 +1,45 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%); /* hidden by default */
+    background-color: var(--bg-color-dark);
+    padding: 4rem 2rem;
+    width: 65vw;
+    max-width: 300px;
+    transition: transform 0.3s ease; /* smoother transition */
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    transform: translateX(0); /* slide in */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 80vw; /* almost full screen on very small devices */
+    }
+}
+
+.sidebar a img {
+    height: 3em;
+}
+
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 2rem 0;
+}
+
+.sidebar .menu a {
+    font-size: 2em;
+    padding: 0;
+}
+
+.sidebar .dm-toggle-container {
+    display: none;
+}

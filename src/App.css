@@ -1,0 +1,51 @@
+.App {
+    overflow: hidden;
+    text-align: center;
+    
+    --default-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    --code-green: #00ff00;
+
+    --bg-color: rgb(58, 68, 62);
+    --bg-gradient-shallow: linear-gradient(#1B2D3A, #365870);   /* 7e7c5b */
+    --bg-default: #000000;
+    --bg-color-extralight: #20374a;
+    --bg-color-light: #172632;
+    --bg-color-dark: rgb(31, 41, 35);
+    --bg-color-glass: rgba(23, 38, 50, 0.2);
+    --bg-color-glass-tinted: rgba(23, 38, 50, 0.8);
+    --bg-textarea: #3b6281;
+    --text-color: wheat;
+    --text-color-2: #d1d1d1;
+    --accent-color: #5b7544;
+    --accent-color-2: #FFC000;
+    --accent-color-filter: invert(15%) sepia(39%) saturate(4018%) hue-rotate(360deg) brightness(103%) contrast(106%);   /* credit: https://isotropic.co/tool/hex-color-to-css-filter/ */
+    --link-color: #a9cdeb;
+    --list-even-color: rgba(255, 255, 255, 0.1);
+    --resume-page-color: rgba(255,255,255,0.8);
+    --not-found-gradient: -webkit-linear-gradient(left, #FFC000, #ffa989);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+p, div {
+    font-family: quicksand;
+}
+
+a {
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

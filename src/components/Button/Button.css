@@ -1,0 +1,14 @@
+.button-container {
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.button-container:hover {
+    color: var(--accent-color);
+}

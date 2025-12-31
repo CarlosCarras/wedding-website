@@ -1,0 +1,18 @@
+.footer-container {
+    background-color: var(--bg-color-dark);
+    width: calc(100% - 2*1.5em);
+    padding: 1.5em;
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-container .copyright-notice {
+    padding: 0.8rem 0 0;
+}
+
+.footer-container .copyright-notice span {
+    color: var(--accent-color);
+}
