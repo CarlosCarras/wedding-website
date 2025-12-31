@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wedding-website/static/css/main.354f7df0.css",
-    "main.js": "/wedding-website/static/js/main.768f6934.js",
+    "main.css": "/wedding-website/static/css/main.55bc2bbc.css",
+    "main.js": "/wedding-website/static/js/main.b81b022e.js",
     "static/js/453.cd210156.chunk.js": "/wedding-website/static/js/453.cd210156.chunk.js",
     "static/media/hero.png": "/wedding-website/static/media/hero.8f27397f06570a774ddd.png",
     "static/media/mari_and_carlos.JPG": "/wedding-website/static/media/mari_and_carlos.b45066e100d9a99ac6e7.JPG",
@@ -12,12 +12,12 @@
     "static/media/edwardianscriptitc.ttf": "/wedding-website/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
     "static/media/separator.webp": "/wedding-website/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/wedding-website/index.html",
-    "main.354f7df0.css.map": "/wedding-website/static/css/main.354f7df0.css.map",
-    "main.768f6934.js.map": "/wedding-website/static/js/main.768f6934.js.map",
+    "main.55bc2bbc.css.map": "/wedding-website/static/css/main.55bc2bbc.css.map",
+    "main.b81b022e.js.map": "/wedding-website/static/js/main.b81b022e.js.map",
     "453.cd210156.chunk.js.map": "/wedding-website/static/js/453.cd210156.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.354f7df0.css",
-    "static/js/main.768f6934.js"
+    "static/css/main.55bc2bbc.css",
+    "static/js/main.b81b022e.js"
   ]
 }
