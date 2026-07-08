@@ -1,7 +1,7 @@
 {
   "name": "wedding-website",
   "version": "0.1.0",
-  "homepage": "https://carloscarras.github.io/wedding-website",
+  "homepage": "https://marilynandcarlos.com",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.1.0",

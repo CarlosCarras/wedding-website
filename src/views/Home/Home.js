@@ -7,8 +7,8 @@ import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import "./Home.css"
 
 
-const WEDDING_DATE = new Date("October 18, 2026");
-const HERO_IMG = require("../../assets/hero.png");
+const WEDDING_DATE = new Date("October 17, 2026");
+const HERO_IMG = require("../../assets/pictures_of_us.png");
 const SEPARATOR = require("../../assets/backdrops/separator.webp");
 const LOCATION = "St. Petersburg,  Florida";
 const REGISTRY_LINK = "https://www.amazon.com"
@@ -53,22 +53,27 @@ function Home() {
         <div className="home-container">
             <div className="row">
                 <section id="home">
-                    <img src={HERO_IMG} alt="hero" className="hero-image"/>
+                    <div className="hero-scroll-container">
+                        <div className="hero-scroll-wrapper">
+                            <img src={HERO_IMG} alt="hero scroll 1" className="hero-scroll-image"/>
+                            <img src={HERO_IMG} alt="hero scroll 2" className="hero-scroll-image"/>
+                        </div>
+                    </div>
                 </section>
             </div>
-            <div className="row">
+            <div className="row" style={{"overflow": "hidden"}}>
                 <div className="backdrop left"/>
                 <div className="backdrop right"/>
                 <section className="row-entry">
                     <h1 className="title">
                         Marilyn + Carlos 
                     </h1>
-                    join us on
+                    Join us on
                     <h4> {DATE_STRING} </h4>
                     at
                     <h4> {LOCATION} </h4>
 
-                    <p className="home-text"> for our wedding ceremony. we'll see you in </p><br/>
+                    <p className="home-text"> for our wedding ceremony. We'll see you in </p><br/>
                     <FlipClockCountdown to={WEDDING_DATE} className='flip-clock'/>  
                 </section>
             </div>
@@ -77,6 +82,13 @@ function Home() {
                 <section className="row-entry" id="welcome">
                     <h2>Welcome!</h2>
                     <p className="home-text">To our friends and family: We're so excited to celebrate our wedding with you. Find all the details you need to know about our big day here.</p>
+                </section>
+            </div>
+            {separator}
+            <div className="row">
+                <section className="row-entry" id="welcome">
+                    <h2>Travel and Accomodations</h2>
+                    <p className="home-text">We recommend</p>
                 </section>
             </div>
             {separator}

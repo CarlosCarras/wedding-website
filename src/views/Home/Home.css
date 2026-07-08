@@ -12,7 +12,7 @@
 
 .home-container .backdrop {
     position: absolute;
-    top: 0;
+    top: -3px;
     left: 0;
     width: 70%;
     height: 100%;
@@ -65,9 +65,47 @@
     margin: 0.5em 0;
 }
 
-.home-container .hero-image {
+.hero-scroll-container {
+    --hero-height: 45vh;
+    height: var(--hero-height);
     width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+.hero-scroll-wrapper {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: hero-scroll-left 50s linear infinite;
+}
+
+.hero-scroll-image {
+    height: 100%;
+    width: auto;
     display: block;
+}
+
+/* Overlap the second parallelogram image by the exact slant width (203/1035 of the height) */
+.hero-scroll-image + .hero-scroll-image {
+    margin-left: calc(-1 * var(--hero-height) * 203 / 1035);
+}
+
+/* Loop distance is exactly (9400 - 203) / 1035 of the height */
+@keyframes hero-scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-1 * var(--hero-height) * 9197 / 1035));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-scroll-container {
+        --hero-height: 25vh;
+    }
 }
 
 .home-container .separator-image {
