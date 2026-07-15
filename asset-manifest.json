@@ -1,23 +1,38 @@
 {
   "files": {
-    "main.css": "/static/css/main.6b047843.css",
-    "main.js": "/static/js/main.12cf5847.js",
+    "main.css": "/static/css/main.68eb677d.css",
+    "main.js": "/static/js/main.1105ede3.js",
     "static/js/453.cd210156.chunk.js": "/static/js/453.cd210156.chunk.js",
-    "static/media/hero.png": "/static/media/hero.8f27397f06570a774ddd.png",
+    "static/media/picture_11.png": "/static/media/picture_11.fd89015e5557dff8fc25.png",
+    "static/media/picture_5.png": "/static/media/picture_5.a24534e6d2c118d564b4.png",
+    "static/media/picture_6.png": "/static/media/picture_6.f8c65f205a956f302d7a.png",
+    "static/media/picture_2.png": "/static/media/picture_2.54ad041a3bfab2d41d0c.png",
+    "static/media/picture_14.png": "/static/media/picture_14.ecbc5e2bbddc92fa6820.png",
+    "static/media/picture_12.png": "/static/media/picture_12.910dbdd326977e2ff171.png",
+    "static/media/picture_10.png": "/static/media/picture_10.2262e77ecfce993abf01.png",
+    "static/media/pink_flower.png": "/static/media/pink_flower.7e7eb01e1be8f6df9909.png",
+    "static/media/picture_4.png": "/static/media/picture_4.1016c0bbef2ee05c86e0.png",
     "static/media/mari_and_carlos.JPG": "/static/media/mari_and_carlos.b45066e100d9a99ac6e7.JPG",
     "static/media/floral-backdrop-r.webp": "/static/media/floral-backdrop-r.4724226632f356e39af8.webp",
     "static/media/floral-backdrop-l.webp": "/static/media/floral-backdrop-l.0451ec0d0a37cb3e2bd4.webp",
     "static/media/Quicksand-VariableFont_wght.ttf": "/static/media/Quicksand-VariableFont_wght.7e79b7e7f9a882bcb2ab.ttf",
     "static/media/Sacramento-Regular.ttf": "/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
     "static/media/edwardianscriptitc.ttf": "/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
+    "static/media/picture_15.jpg": "/static/media/picture_15.80453dfce578b708ecdb.jpg",
+    "static/media/picture_9.jpg": "/static/media/picture_9.d998fbdd50063e8d524b.jpg",
+    "static/media/picture_1.jpg": "/static/media/picture_1.1cceaa8fe045ca63f1e8.jpg",
+    "static/media/picture_7.jpg": "/static/media/picture_7.8bdc9c6c4a4b5c52f7b8.jpg",
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
+    "static/media/picture_13.jpg": "/static/media/picture_13.81fe355d0cb7cf6d7b49.jpg",
+    "static/media/picture_8.jpg": "/static/media/picture_8.59802b4d7202ed04cb9c.jpg",
+    "static/media/picture_3.jpg": "/static/media/picture_3.0c011e0a19384186c7a3.jpg",
     "index.html": "/index.html",
-    "main.6b047843.css.map": "/static/css/main.6b047843.css.map",
-    "main.12cf5847.js.map": "/static/js/main.12cf5847.js.map",
+    "main.68eb677d.css.map": "/static/css/main.68eb677d.css.map",
+    "main.1105ede3.js.map": "/static/js/main.1105ede3.js.map",
     "453.cd210156.chunk.js.map": "/static/js/453.cd210156.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b047843.css",
-    "static/js/main.12cf5847.js"
+    "static/css/main.68eb677d.css",
+    "static/js/main.1105ede3.js"
   ]
 }
