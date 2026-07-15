@@ -11,6 +11,7 @@ function App() {
     const sections = {
         "Home": '#home',
         "Our Story": '#our-story',
+        "Venue": '#venue',
         "Registry": '#registry',
         "Gallery": '#gallery'
     };

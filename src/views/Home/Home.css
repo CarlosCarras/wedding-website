@@ -1,7 +1,6 @@
 .home-container {
     background-color: var(--bg-color);
     color: var(--text-color);
-    padding-top: 80px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -47,6 +46,44 @@
     width: 100%;
 }
 
+/* Card/Page styling for text sections, excluding the hero title card */
+.home-container .row:not(.hero-sticky-track) .row-entry {
+    background-color: #18231c; /* very dark forest green paper card */
+    color: #ebdcb2; /* goldish warm text */
+    padding: 3.5rem 4rem;
+    max-width: 900px;
+    width: calc(100% - 4rem); /* leaves 2rem margins on sides on mobile */
+    margin: 3.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-sizing: border-box;
+}
+
+.home-container .row:not(.hero-sticky-track) .row-entry h2 {
+    color: #dfc889; /* gold heading color */
+    font-size: 3.2em; /* make it larger and more elegant on the paper! */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.8rem;
+}
+
+.home-container .row:not(.hero-sticky-track) .row-entry p,
+.home-container .row:not(.hero-sticky-track) .row-entry .home-text {
+    color: #ebdcb2; /* warm goldish text */
+    line-height: 1.7;
+    font-size: 1.05rem; /* clean readable size */
+}
+
+/* Adjust timeline content text coloring inside paper page */
+.home-container .row:not(.hero-sticky-track) .row-entry .timeline-content h4 {
+    color: #dfc889;
+}
+
+.home-container .row:not(.hero-sticky-track) .row-entry .timeline-content p {
+    color: #ebdcb2;
+}
+
 .home-container h1 {
     font-family: sacramento;
     font-size: calc(28px + 7vw);
@@ -65,46 +102,128 @@
     margin: 0.5em 0;
 }
 
-.hero-scroll-container {
-    --hero-height: 45vh;
-    height: var(--hero-height);
-    width: 100vw;
-    overflow: hidden;
+/* Sticky track layout: spans 350vh of scrolling height */
+.hero-sticky-track {
     position: relative;
-    background-color: var(--bg-color);
+    height: 350vh;
+    width: 100vw;
 }
 
-.hero-scroll-wrapper {
+/* Sticky viewport content: stays pinned */
+.hero-sticky-content {
+    width: 100%;
     display: flex;
-    width: max-content;
-    height: 100%;
-    animation: hero-scroll-left 50s linear infinite;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--bg-color-dark); /* dark forest/slate */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
 }
 
-.hero-scroll-image {
+.hero-sticky-content .backdrop {
+    z-index: 1;
+}
+
+/* Scrollable absolute wrapper for Polaroid cards */
+.hero-scrollable-polaroids {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    width: auto;
+    pointer-events: none;
+    z-index: 2; /* In front of backdrop (z-index 1) but behind text (z-index 5) */
+}
+
+/* Base style for scrolling polaroid cards */
+.hero-scroll-card {
+    position: absolute;
+    pointer-events: auto; /* Allow hovers to pass through */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), z-index 0.4s;
+    cursor: pointer;
+}
+
+.hero-scroll-polaroid {
+    background: #ffffff;
+    padding: 10px 10px 24px 10px; /* Polaroid frame style */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18), 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.hero-scroll-polaroid img {
     display: block;
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Overlap the second parallelogram image by the exact slant width (203/1035 of the height) */
-.hero-scroll-image + .hero-scroll-image {
-    margin-left: calc(-1 * var(--hero-height) * 203 / 1035);
+.hero-scroll-caption {
+    font-family: Sacramento, cursive;
+    font-size: 1.25em;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 500;
 }
 
-/* Loop distance is exactly (9400 - 203) / 1035 of the height */
-@keyframes hero-scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-1 * var(--hero-height) * 9197 / 1035));
-    }
+/* Hover effects for parallax cards */
+.hero-scroll-card:hover {
+    z-index: 50 !important; /* bring card to the front of all layers */
 }
 
+.hero-scroll-card:hover .hero-scroll-polaroid {
+    transform: scale(1.15) rotate(0deg);
+    box-shadow: 0 28px 45px rgba(0,0,0,0.32), 0 12px 24px rgba(0,0,0,0.18);
+}
+
+/* Card dimension overrides */
+.card-1 { width: 180px; }
+.card-2 { width: 190px; }
+.card-3 { width: 200px; }
+.card-4 { width: 180px; }
+.card-5 { width: 190px; }
+.card-6 { width: 185px; }
+
+/* Mobile responsive styles */
 @media (max-width: 768px) {
-    .hero-scroll-container {
-        --hero-height: 25vh;
+    .hero-sticky-track {
+        height: 350vh;
+    }
+    
+    .hero-sticky-content {
+        min-height: 520px;
+    }
+    
+    .hero-scroll-card {
+        max-width: 95px;
+    }
+
+    .hero-scroll-polaroid {
+        padding: 6px 6px 14px 6px;
+    }
+
+    .hero-scroll-polaroid img {
+        height: 70px;
+    }
+
+    .hero-scroll-caption {
+        font-size: 0.85em;
+        margin-top: 5px;
+    }
+
+    .home-container .row:not(.hero-sticky-track) .row-entry {
+        padding: 2.5rem 1.5rem;
+        width: calc(100% - 2rem);
+        margin: 2rem auto;
+    }
+    
+    .home-container .row:not(.hero-sticky-track) .row-entry h2 {
+        font-size: 2.2em;
+        margin-bottom: 1.2rem;
     }
 }
 
@@ -166,4 +285,341 @@
     to {
         opacity: 1;
     }
+}
+
+/* Venue & Travel Card Layout Styling */
+.venue-details-container {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+}
+
+.venue-details-container.stacked {
+    flex-direction: column;
+    width: 100%;
+    gap: 2.5rem;
+}
+
+.venue-card {
+    flex: 1;
+    background-color: #223127; /* dark green inset block */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.venue-card h3 {
+    font-family: 'Quicksand', sans-serif;
+    color: #dfc889; /* gold */
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+}
+
+.venue-rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Horizontal Timeline styles inside Venue */
+.venue-timeline-horizontal {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    padding: 10px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for clean horizontal scrolling */
+.venue-timeline-horizontal::-webkit-scrollbar {
+    height: 6px;
+}
+.venue-timeline-horizontal::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 3px;
+}
+.venue-timeline-horizontal::-webkit-scrollbar-thumb {
+    background: rgba(223, 200, 137, 0.15);
+    border-radius: 3px;
+}
+.venue-timeline-horizontal::-webkit-scrollbar-thumb:hover {
+    background: rgba(223, 200, 137, 0.3);
+}
+
+.venue-timeline-line {
+    position: absolute;
+    top: 43px; /* aligns with center of flower */
+    left: 4%;
+    right: 4%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    z-index: 1;
+    min-width: 550px;
+}
+
+.venue-timeline-items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    z-index: 2;
+    min-width: 600px;
+}
+
+.venue-timeline-item-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 95px;
+    box-sizing: border-box;
+}
+
+.venue-flower-bullet {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin: 0.4rem 0;
+    transition: transform 0.2s ease;
+    z-index: 3;
+}
+
+.venue-timeline-item-node:hover .venue-flower-bullet {
+    transform: scale(1.25) rotate(15deg);
+}
+
+.venue-time {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #dfc889; /* gold */
+    font-size: 0.9em;
+}
+
+.venue-event {
+    color: #ebdcb2; /* light gold */
+    font-size: 0.85em;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 0.2rem;
+}
+
+/* Interactive Guest Rules styles */
+.rules-interactive-layout {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.rules-topics-list {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding-right: 1.5rem;
+}
+
+.rule-topic-btn {
+    background: none;
+    border: none;
+    color: #a4b2a7; /* muted sage-gold text */
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.05em;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.rule-topic-btn:hover {
+    color: #dfc889; /* gold hover color */
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.rule-topic-btn.active {
+    color: #dfc889; /* active gold color */
+    background-color: #223127; /* dark green active tab */
+    box-shadow: inset 3px 0 0 #dfc889; /* gold left border line */
+}
+
+.rule-btn-flower {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.rule-topic-btn.active .rule-btn-flower {
+    opacity: 1;
+    transform: rotate(30deg);
+}
+
+.rules-content-display {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.rules-content-title {
+    font-family: 'Quicksand', sans-serif;
+    color: #dfc889;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.rules-content-text {
+    color: #ebdcb2; /* light warm gold text */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Hotel Cards Layout Grid */
+.hotel-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.hotel-card {
+    background-color: #223127; /* dark green hotel block */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.hotel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-color: #2a3c30; /* darker green hover highlight */
+}
+
+.hotel-card-image {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+}
+
+.hotel-card h3 {
+    font-family: 'Quicksand', sans-serif;
+    color: #dfc889;
+    font-size: 1.05em;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+}
+
+.hotel-distance {
+    color: #ebdcb2;
+    font-size: 0.85em;
+    opacity: 0.85;
+    margin: 0.2rem 0 0.8rem 0;
+}
+
+.hotel-link {
+    color: #dfc889;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.85em;
+    display: inline-block;
+    align-self: flex-start;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.hotel-link:hover {
+    color: #ebdcb2;
+    border-color: #ebdcb2;
+}
+
+/* Responsive adjustment for stacked layouts & rules */
+@media (max-width: 768px) {
+    .venue-details-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .rules-interactive-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .rules-topics-list {
+        flex: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-right: 0;
+        padding-bottom: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .rule-topic-btn {
+        width: auto;
+        font-size: 0.9em;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .rule-topic-btn.active {
+        box-shadow: inset 0 -3px 0 #dfc889; /* bottom border instead of left border on mobile tabs */
+    }
+}
+
+/* Registry Card highlight card */
+.registry-card {
+    margin: 2.5rem auto;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #223127;
+    border: 1px solid rgba(223, 200, 137, 0.22);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.registry-card h4 {
+    color: #dfc889;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+
+.registry-info {
+    font-size: 1.1em;
+    color: #ebdcb2;
+    line-height: 1.8;
+}
+
+.registry-info strong {
+    color: #dfc889;
 }

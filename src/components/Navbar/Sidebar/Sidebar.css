@@ -4,7 +4,7 @@
     bottom: 0;
     left: 0;
     transform: translateX(-100%); /* hidden by default */
-    background-color: var(--bg-color-dark);
+    background-color: #121a15; /* slightly darker slate green */
     padding: 4rem 2rem;
     width: 65vw;
     max-width: 300px;

@@ -4,7 +4,6 @@ import Sidebar from "./Sidebar/Sidebar";
 import "./Navbar.css";
 
 function Navbar({ sections = {} }) {
-    const [backgroundActive, setBackgroundActive] = useState(false);
     const [activeSection, setActiveSection] = useState("");
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -21,11 +20,9 @@ function Navbar({ sections = {} }) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Scroll spy + background
+    // Scroll spy
     useEffect(() => {
         const handleScroll = () => {
-            setBackgroundActive(window.scrollY >= 40);
-
             if (location.pathname !== "/") return;
 
             let current = "";
@@ -88,7 +85,7 @@ function Navbar({ sections = {} }) {
     );
 
     return (
-        <nav className={`navbar ${backgroundActive ? "bg-active" : ""}`}>
+        <nav className="navbar">
             {isMobile ? (
                 <>
                     <div
