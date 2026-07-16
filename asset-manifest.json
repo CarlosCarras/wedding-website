@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.5883923d.css",
-    "main.js": "/static/js/main.1919f402.js",
+    "main.js": "/static/js/main.f0ae258f.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/haley.png": "/static/media/haley.c99912cdc7374ab1f7ff.png",
+    "static/media/desi_chris.png": "/static/media/desi_chris.16bf1bedd1243956481c.png",
     "static/media/julia.png": "/static/media/julia.57d7e718a3186656e709.png",
     "static/media/aunt_grethel.png": "/static/media/aunt_grethel.cd45f8f5439ab9310522.png",
     "static/media/keishla_nicole.png": "/static/media/keishla_nicole.612ede86c82bae66a225.png",
@@ -12,6 +13,7 @@
     "static/media/ines.png": "/static/media/ines.646ceef4ce05dd0dcd39.png",
     "static/media/kiko_inlaw_1.png": "/static/media/kiko_inlaw_1.abef4abe52a0d4bc246d.png",
     "static/media/helen.png": "/static/media/helen.21dd1f023a1b29d313fa.png",
+    "static/media/rawabi.png": "/static/media/rawabi.74db9c82c84d90070dc2.png",
     "static/media/baby_carlos.png": "/static/media/baby_carlos.d166f6875be9bc29f992.png",
     "static/media/teresa.png": "/static/media/teresa.666fa1901a7741b1457b.png",
     "static/media/reshma.png": "/static/media/reshma.4ec865a97a4301c4884a.png",
@@ -20,12 +22,18 @@
     "static/media/janaki_1.png": "/static/media/janaki_1.824810693124f970c09f.png",
     "static/media/kimmy.png": "/static/media/kimmy.00d647a0dfd38759af82.png",
     "static/media/chloe.png": "/static/media/chloe.d73bfd64ec9e0051bfa1.png",
+    "static/media/mark.png": "/static/media/mark.e1575effe708e30b3d4d.png",
     "static/media/families_both.png": "/static/media/families_both.bf86095c3c4c71195cc5.png",
     "static/media/space_needle.png": "/static/media/space_needle.43772b86d5708d9fc433.png",
+    "static/media/teresa_sam.png": "/static/media/teresa_sam.8270bef65977c81c50e8.png",
+    "static/media/maite_migue.png": "/static/media/maite_migue.aa6c6069b1b441b8225d.png",
+    "static/media/janaki_jonathan.png": "/static/media/janaki_jonathan.4c700d52d50eb1ec8f92.png",
+    "static/media/ines_kyle.png": "/static/media/ines_kyle.5dd22cb7a674b96c7181.png",
     "static/media/james.png": "/static/media/james.e588d6b69890f69aef9e.png",
     "static/media/kiko_fam.png": "/static/media/kiko_fam.431f97ff70e5a128bdf4.png",
     "static/media/helen_jasmine.png": "/static/media/helen_jasmine.d5ebde2eabc068918f2e.png",
-    "static/media/rawabi.png": "/static/media/rawabi.d659d7eb8dcb96ef9b21.png",
+    "static/media/reshma_mathew.png": "/static/media/reshma_mathew.054a8d703268a055ebd4.png",
+    "static/media/wes_chloe.png": "/static/media/wes_chloe.7918c9a43717f9c38c06.png",
     "static/media/galaxy.png": "/static/media/galaxy.8b590bf2d583eee54f92.png",
     "static/media/mia_airport.png": "/static/media/mia_airport.18d125a77c0dccad03cb.png",
     "static/media/baby_mari.png": "/static/media/baby_mari.bfdf55af99f1d98c5738.png",
@@ -55,11 +63,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.5883923d.css.map": "/static/css/main.5883923d.css.map",
-    "main.1919f402.js.map": "/static/js/main.1919f402.js.map",
+    "main.f0ae258f.js.map": "/static/js/main.f0ae258f.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5883923d.css",
-    "static/js/main.1919f402.js"
+    "static/js/main.f0ae258f.js"
   ]
 }
