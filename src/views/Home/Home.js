@@ -42,7 +42,7 @@ const TIMELINE_IMAGES = [
 const GALLERY_IMAGES_BASE = [
     { name: "Mari + Carlos", src: require("../../assets/gallery/families_both.png"), caption: "Families" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/space_needle.png"), caption: "Space Needle" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/helen.png"), caption: "Helen" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/mia_airport.png"), caption: "Mia Airport" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/kiko.png"), caption: "Kiko" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/grandmas.png"), caption: "Grandmas" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/kiko_fam.png"), caption: "Family" },
