@@ -40,6 +40,8 @@ const TIMELINE_IMAGES = [
 ];
 
 const GALLERY_IMAGES_BASE = [
+    { name: "Baby Carlos", src: require("../../assets/gallery/baby_carlos.png"), caption: "San Juan, PR" },
+    { name: "Baby Mari", src: require("../../assets/gallery/baby_mari.png"), caption: "Placetas, Cuba" },
     { name: "Our parents", src: require("../../assets/gallery/families_both.png"), caption: "Atlanta, GA" },
     { name: "Carlos' Family", src: require("../../assets/gallery/space_needle.png"), caption: "Seattle, WA" },
     { name: "Mari's Family", src: require("../../assets/gallery/mia_airport.png"), caption: "Miami, FL" },
@@ -72,9 +74,7 @@ const GALLERY_IMAGES_BASE = [
     { name: "Mark", src: require("../../assets/gallery/mark.png"), caption: "Breckenridge, CO" },
     { name: "Helen", src: require("../../assets/gallery/helen.png"), caption: "Miami, FL" },
     { name: "Janaki", src: require("../../assets/gallery/janaki_1.png"), caption: "Gainesville, FL" },
-    { name: "Kiko", src: require("../../assets/gallery/kiko.png"), caption: "Miami, FL" },
-    { name: "Baby Carlos", src: require("../../assets/gallery/baby_carlos.png"), caption: "San Juan, PR" },
-    { name: "Baby Mari", src: require("../../assets/gallery/baby_mari.png"), caption: "Placetas, Cuba" }
+    { name: "Kiko", src: require("../../assets/gallery/kiko.png"), caption: "Miami, FL" }
 ];
 
 const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
@@ -563,7 +563,7 @@ function Home() {
                     <p className="home-text" style={{"textAlign": "center", "marginBottom": "2rem"}}>
                         We are so grateful to have all of you in our lives!
                     </p>
-                    <Gallery images={GALLERY_IMAGES} breakLastTwo={true}/>
+                    <Gallery images={GALLERY_IMAGES} breakFirstTwo={true}/>
 
                     <div className="memorial-gallery-section">
                         <h3 className="memorial-title">In Loving Memory</h3>

@@ -46,11 +46,11 @@ function Navbar({ sections = {} }) {
             navigate("/");
             setTimeout(() => {
                 const el = document.querySelector(hash);
-                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
             }, 50);
         } else {
             const el = document.querySelector(hash);
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
         }
         setIsDropdownOpen(false); // close dropdown after clicking
     };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Lightbox from "../Lightbox/Lightbox";
 import "./Gallery.css";
 
-function Gallery({ images = [], breakLastTwo = false }) {
+function Gallery({ images = [], breakLastTwo = false, breakFirstTwo = false }) {
     const [selectedImage, setSelectedImage] = useState(null);
 
     return (
@@ -15,6 +15,7 @@ function Gallery({ images = [], breakLastTwo = false }) {
                 return (
                     <React.Fragment key={index}>
                         {index === images.length - 2 && breakLastTwo && <div className="gallery-break" />}
+                        {index === 2 && breakFirstTwo && <div className="gallery-break" />}
                         <div 
                             className="polaroid-card" 
                             style={style}
