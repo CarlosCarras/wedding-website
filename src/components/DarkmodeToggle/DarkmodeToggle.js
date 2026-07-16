@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import "./DarkmodeToggle.css";
 
-const SUN = require('./../../assets/icons/sun.png'),
-      MOON = require('./../../assets/icons/moon.png');
+const SUN = require('./../../assets/icons/sun.webp'),
+      MOON = require('./../../assets/icons/moon.webp');
 
 function DarkmodeToggle(props) {
     const [isActive, setActive] = useState(props.darkmode);

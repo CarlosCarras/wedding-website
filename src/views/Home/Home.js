@@ -11,26 +11,26 @@ import "./Home.css"
 const WEDDING_DATE = new Date("October 17, 2026");
 
 const HERO_IMAGES = [
-    require("../../assets/header/2019.png"),
-    require("../../assets/header/2024.png"),
-    require("../../assets/header/2020.png"),
-    require("../../assets/header/2025-2.png"),
-    require("../../assets/header/2021.png"),
-    require("../../assets/header/2025.png"),
-    require("../../assets/gallery/picture_7.jpg"),
-    require("../../assets/gallery/picture_8.jpg"),
-    require("../../assets/gallery/picture_9.jpg"),
-    require("../../assets/gallery/picture_10.png"),
-    require("../../assets/gallery/picture_11.png"),
-    require("../../assets/gallery/picture_12.png"),
-    require("../../assets/gallery/picture_13.jpg"),
-    require("../../assets/gallery/picture_14.png"),
-    require("../../assets/gallery/picture_15.jpg")
+    require("../../assets/header/2019.webp"),
+    require("../../assets/header/2024.webp"),
+    require("../../assets/header/2020.webp"),
+    require("../../assets/header/2025-2.webp"),
+    require("../../assets/header/2021.webp"),
+    require("../../assets/header/2025.webp"),
+    require("../../assets/gallery/picture_7.webp"),
+    require("../../assets/gallery/picture_8.webp"),
+    require("../../assets/gallery/picture_9.webp"),
+    require("../../assets/gallery/picture_10.webp"),
+    require("../../assets/gallery/picture_11.webp"),
+    require("../../assets/gallery/picture_12.webp"),
+    require("../../assets/gallery/picture_13.webp"),
+    require("../../assets/gallery/picture_14.webp"),
+    require("../../assets/gallery/picture_15.webp")
 ];
 
 
 const SEPARATOR = require("../../assets/backdrops/separator.webp");
-const PINK_FLOWER = require("../../assets/icons/pink_flower.png");
+const PINK_FLOWER = require("../../assets/icons/pink_flower.webp");
 const LOCATION = "St. Petersburg,  Florida";
 const REGISTRY_LINK = "https://www.amazon.com"
 
@@ -45,31 +45,31 @@ const TIMELINE_DATA = [
 ];
 
 const TIMELINE_IMAGES = [
-    require("../../assets/gallery/mari_and_carlos.png"),
-    require("../../assets/gallery/proposal.png"),
-    require("../../assets/gallery/engagement.png")
+    require("../../assets/gallery/mari_and_carlos.webp"),
+    require("../../assets/gallery/proposal.webp"),
+    require("../../assets/gallery/engagement.webp")
 ];
 
 const GALLERY_IMAGES_BASE = [
-    { name: "Mari + Carlos", src: require("../../assets/gallery/mari_and_carlos.png"), caption: "Marilyn & Carlos" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_1.jpg"), caption: "Sweet moments" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_2.png"), caption: "Together" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_3.jpg"), caption: "Smiling" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_4.png"), caption: "Warm embrace" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_5.png"), caption: "By the water" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_6.png"), caption: "Happy times" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_7.jpg"), caption: "Laughter" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_8.jpg"), caption: "Side by side" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_9.jpg"), caption: "Always" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_10.png"), caption: "Holding hands" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_11.png"), caption: "Joy" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_12.png"), caption: "Beautiful day" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_13.jpg"), caption: "Adventures" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_14.png"), caption: "Sunsets" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_15.jpg"), caption: "Love" }
+    { name: "Mari + Carlos", src: require("../../assets/gallery/mari_and_carlos.webp"), caption: "Marilyn & Carlos" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_1.webp"), caption: "Sweet moments" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_2.webp"), caption: "Together" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_3.webp"), caption: "Smiling" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_4.webp"), caption: "Warm embrace" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_5.webp"), caption: "By the water" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_6.webp"), caption: "Happy times" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_7.webp"), caption: "Laughter" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_8.webp"), caption: "Side by side" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_9.webp"), caption: "Always" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_10.webp"), caption: "Holding hands" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_11.webp"), caption: "Joy" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_12.webp"), caption: "Beautiful day" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_13.webp"), caption: "Adventures" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_14.webp"), caption: "Sunsets" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/picture_15.webp"), caption: "Love" }
 ];
 
-const GALLERY_IMAGES = Array.from({ length: 48 }, (_, i) => {
+const GALLERY_IMAGES = Array.from({ length: 18 }, (_, i) => {
     const base = GALLERY_IMAGES_BASE[i % GALLERY_IMAGES_BASE.length];
     return {
         ...base,
@@ -79,10 +79,10 @@ const GALLERY_IMAGES = Array.from({ length: 48 }, (_, i) => {
 });
 
 const MEMORIAL_IMAGES = [
-    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "Always in our hearts" },
-    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "Forever with us" },
-    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "In our thoughts" },
-    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "With us in spirit" }
+    { name: "In Loving Memory", src: require("../../assets/gallery/picture_3.webp"), caption: "Always in our hearts" },
+    { name: "In Loving Memory", src: require("../../assets/gallery/picture_3.webp"), caption: "Forever with us" },
+    { name: "In Loving Memory", src: require("../../assets/gallery/picture_3.webp"), caption: "In our thoughts" },
+    { name: "In Loving Memory", src: require("../../assets/gallery/picture_3.webp"), caption: "With us in spirit" }
 ];
 
 const GUEST_RULES = [

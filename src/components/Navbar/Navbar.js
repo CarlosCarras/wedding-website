@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Sidebar from "./Sidebar/Sidebar";
 import "./Navbar.css";
+
+const PINK_FLOWER = require("../../assets/icons/pink_flower.webp");
 
 function Navbar({ sections = {} }) {
     const [activeSection, setActiveSection] = useState("");
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     const location = useLocation();
     const navigate = useNavigate();
-    const sidebarRef = useRef(null);
+    const dropdownRef = useRef(null);
     const hamburgerRef = useRef(null);
 
     // Update mobile status on resize
@@ -51,19 +52,19 @@ function Navbar({ sections = {} }) {
             const el = document.querySelector(hash);
             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-        setIsSidebarOpen(false); // close sidebar after clicking
+        setIsDropdownOpen(false); // close dropdown after clicking
     };
 
-    // Close sidebar if clicking outside
+    // Close dropdown if clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
-                sidebarRef.current &&
-                !sidebarRef.current.contains(event.target) &&
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target) &&
                 hamburgerRef.current &&
                 !hamburgerRef.current.contains(event.target)
             ) {
-                setIsSidebarOpen(false);
+                setIsDropdownOpen(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -78,6 +79,7 @@ function Navbar({ sections = {} }) {
                     onClick={() => scrollToSection(hash)}
                     className={activeSection === key ? "active" : ""}
                 >
+                    <img src={PINK_FLOWER} alt="flower" className="nav-flower-bullet" />
                     {key.charAt(0).toUpperCase() + key.slice(1)}
                 </button>
             ))}
@@ -87,16 +89,30 @@ function Navbar({ sections = {} }) {
     return (
         <nav className="navbar">
             {isMobile ? (
-                <>
-                    <div
+                <div className="mobile-nav-container">
+                    <button
                         className="hamburger-menu"
-                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                         ref={hamburgerRef}
+                        aria-label="Toggle menu"
                     >
                         &#9776;
-                    </div>
-                    <Sidebar ref={sidebarRef} active={isSidebarOpen} menu={menu} />
-                </>
+                    </button>
+                    {isDropdownOpen && (
+                        <div className="top-dropdown-menu" ref={dropdownRef}>
+                            {Object.entries(sections).map(([key, hash]) => (
+                                <button
+                                    key={key}
+                                    onClick={() => scrollToSection(hash)}
+                                    className={activeSection === key ? "active" : ""}
+                                >
+                                    <img src={PINK_FLOWER} alt="flower" className="nav-flower-bullet" />
+                                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                </div>
             ) : (
                 menu
             )}

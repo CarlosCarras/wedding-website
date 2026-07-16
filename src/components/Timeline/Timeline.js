@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Lightbox from "../Lightbox/Lightbox";
 import "./Timeline.css";
 
-const PINK_FLOWER = require("../../assets/icons/pink_flower.png");
+const PINK_FLOWER = require("../../assets/icons/pink_flower.webp");
 
 function Timeline({ entries, images = [] }) {
     const [activeIndex, setActiveIndex] = useState(0);
