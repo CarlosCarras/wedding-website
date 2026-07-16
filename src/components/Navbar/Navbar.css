@@ -59,16 +59,105 @@
     color: inherit;
     cursor: pointer;
     padding: 0;
+    display: inline-flex;
+    align-items: center;
 }
 
 .navbar .hamburger-menu {
+    background: none;
+    border: none;
     font-size: 2em;
     margin: 0;
     padding: 0 0.2em 0.1em;
-    color: white;
+    color: #dfc889; /* gold color hamburger */
+    cursor: pointer;
+    outline: none;
+    display: block;
 }
 
 .menu button.active {
     font-weight: 800;
     color: var(--accent-color);
+}
+
+.mobile-nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Top Down dropdown menu */
+.top-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(18, 26, 21, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(223, 200, 137, 0.15);
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    z-index: 999;
+    transform-origin: top;
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.top-dropdown-menu button {
+    background: none;
+    border: none;
+    color: #ebdcb2;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Nav Flower bullet styling */
+.nav-flower-bullet {
+    width: 0;
+    height: 14px;
+    object-fit: contain;
+    margin-right: 0;
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+    transition: width 0.3s ease, margin-right 0.3s ease, opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+button.active .nav-flower-bullet {
+    width: 14px;
+    margin-right: 6px;
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.top-dropdown-menu button:hover {
+    color: #dfc889;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.top-dropdown-menu button.active {
+    color: #dfc889;
+    font-weight: 800;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes slideDown {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
 }

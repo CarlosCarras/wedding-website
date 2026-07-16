@@ -58,6 +58,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-sizing: border-box;
+    scroll-margin-top: 90px; /* Offset scrolling for fixed header overlay */
 }
 
 .home-container .row:not(.hero-sticky-track) .row-entry h2 {
