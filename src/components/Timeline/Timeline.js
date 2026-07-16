@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Lightbox from "../Lightbox/Lightbox";
 import "./Timeline.css";
 
@@ -7,17 +7,6 @@ const PINK_FLOWER = require("../../assets/icons/pink_flower.webp");
 function Timeline({ entries, images = [] }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-    useEffect(() => {
-        if (!isAutoPlaying) return;
-
-        const timer = setInterval(() => {
-            setActiveIndex((prevIndex) => (prevIndex + 1) % entries.length);
-        }, 2000); // automatic slide interval (2 seconds)
-
-        return () => clearInterval(timer);
-    }, [isAutoPlaying, entries.length]);
 
     return (
         <div className="timeline-stepper-container">
@@ -36,7 +25,6 @@ function Timeline({ entries, images = [] }) {
                             className={`stepper-node-btn ${activeIndex === index ? "active" : ""} ${index < activeIndex ? "completed" : ""}`}
                             onClick={() => {
                                 setActiveIndex(index);
-                                setIsAutoPlaying(false); // Pause auto-play when clicked
                             }}
                         >
                             <img src={PINK_FLOWER} alt="flower" className="stepper-flower-node" />
@@ -55,7 +43,6 @@ function Timeline({ entries, images = [] }) {
                             className="stepper-polaroid"
                             onClick={() => {
                                 setIsLightboxOpen(true);
-                                setIsAutoPlaying(false); // Pause auto-play when polaroid clicked
                             }}
                         >
                             <img src={images[activeIndex]} alt={entries[activeIndex].title} />

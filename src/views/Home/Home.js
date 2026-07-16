@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Timeline from "../../components/Timeline/Timeline";
-import Button from "../../components/Button/Button"
 import Gallery from "../../components/Gallery/Gallery";
 import Lightbox from "../../components/Lightbox/Lightbox";
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
@@ -32,9 +31,6 @@ const HERO_IMAGES = [
 const SEPARATOR = require("../../assets/backdrops/separator.webp");
 const PINK_FLOWER = require("../../assets/icons/pink_flower.webp");
 const LOCATION = "St. Petersburg,  Florida";
-const REGISTRY_LINK = "https://www.amazon.com"
-
-const RSVP_EMAIL = "marilynandcarlos2026@gmail.com";
 
 const weekday = WEDDING_DATE.toLocaleDateString('en-US', { weekday: 'long' });
 const restOfDate = WEDDING_DATE.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -71,17 +67,13 @@ const GALLERY_IMAGES_BASE = [
     { name: "Mari + Carlos", src: require("../../assets/gallery/picture_15.webp"), caption: "Love" }
 ];
 
-const GALLERY_IMAGES = Array.from({ length: 18 }, (_, i) => {
-    const base = GALLERY_IMAGES_BASE[i % GALLERY_IMAGES_BASE.length];
-    return {
-        ...base,
-        // Optional: append index to make them distinct inside the React key structure
-        id: i
-    };
-});
+const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
+    ...img,
+    id: i
+}));
 
 const MEMORIAL_IMAGES = [
-    { name: "Nereida Gonzalez", src: require("../../assets/gallery/picture_3.webp"), caption: "" },
+    { name: "Nereida Gonzalez", src: require("../../assets/memorial/nereida.webp"), caption: "" },
     { name: "Teresita Chavez", src: require("../../assets/gallery/picture_3.webp"), caption: "" },
     { name: "Gabriel Dantzler", src: require("../../assets/gallery/picture_3.webp"), caption: "" }
 ];
@@ -160,23 +152,43 @@ function Home() {
 
     // RSVP form states
     const [isRsvpModalOpen, setIsRsvpModalOpen] = useState(false);
-    const [rsvpName, setRsvpName] = useState("");
     const [rsvpAttending, setRsvpAttending] = useState("Yes");
     const [rsvpCount, setRsvpCount] = useState(1);
+    const [rsvpGuests, setRsvpGuests] = useState([
+        { name: "", entree: "Chicken Paella", message: "" }
+    ]);
     const [rsvpMessage, setRsvpMessage] = useState("");
+    const [showMenuInfo, setShowMenuInfo] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleRsvpSubmit = (e) => {
-        e.preventDefault();
-        const subject = `Wedding RSVP - ${rsvpName}`;
-        const body = `Name: ${rsvpName}\nAttending: ${rsvpAttending === "Yes" ? "Yes, happily attending" : "No, regretfully declining"}\nNumber of Guests: ${rsvpAttending === "Yes" ? rsvpCount : 0}\nNote/Dietary: ${rsvpMessage || "None"}`;
-        window.location.href = `mailto:${RSVP_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const handleCountChange = (count) => {
+        setRsvpCount(count);
+        setRsvpGuests(prev => {
+            const next = [...prev];
+            if (count > next.length) {
+                while (next.length < count) {
+                    next.push({ name: "", entree: "Chicken Paella", message: "" });
+                }
+            } else if (count < next.length) {
+                next.splice(count);
+            }
+            return next;
+        });
+    };
+
+    const handleRsvpSubmit = () => {
+        setIsSubmitted(true);
         
-        // Reset states and close modal
-        setIsRsvpModalOpen(false);
-        setRsvpName("");
-        setRsvpAttending("Yes");
-        setRsvpCount(1);
-        setRsvpMessage("");
+        // Reset states and close modal after 3 seconds
+        setTimeout(() => {
+            setIsRsvpModalOpen(false);
+            setIsSubmitted(false);
+            setRsvpAttending("Yes");
+            setRsvpCount(1);
+            setRsvpGuests([{ name: "", entree: "Chicken Paella", message: "" }]);
+            setRsvpMessage("");
+            setShowMenuInfo(false);
+        }, 3000);
     };
 
     useEffect(() => {
@@ -501,12 +513,20 @@ function Home() {
                         However, if you would like to honor us with a gift, a financial contribution toward our future together would be warmly appreciated.
                     </p>
                     <div className="registry-card">
-                        <h4>Zelle Information</h4>
+                        <h3>Zelle Information</h3>
                         <div className="registry-info">
                             Phone Number: <strong>786-702-4967</strong>
                             <br/>
                             Name: <strong>Marilyn Braojos</strong>
                         </div>
+                        <a 
+                            href="https://www.zellepay.com/go/zelle" 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="zelle-btn"
+                        >
+                            Send with Zelle
+                        </a>
                     </div>
                 </section>
             </div>
@@ -546,84 +566,217 @@ function Home() {
                         >
                             &times;
                         </button>
-                        <h3>RSVP Details</h3>
-                        <form onSubmit={handleRsvpSubmit} className="rsvp-modal-form">
-                            <div className="form-group">
-                                <label htmlFor="rsvp-name-input">Name(s):</label>
-                                <input 
-                                    type="text" 
-                                    id="rsvp-name-input" 
-                                    required 
-                                    placeholder="Enter your name(s)"
-                                    value={rsvpName} 
-                                    onChange={(e) => setRsvpName(e.target.value)}
-                                />
+                        
+                        {isSubmitted && (
+                            <div className="rsvp-success-container">
+                                <img src={PINK_FLOWER} alt="flower" className="rsvp-success-flower" />
+                                <h3>Thank You!</h3>
+                                <p className="rsvp-success-text">Your RSVP has been saved successfully.</p>
+                                <p className="rsvp-success-sub">We can't wait to celebrate our special day with you!</p>
                             </div>
-                            
-                            <div className="form-group">
-                                <label>Attendance:</label>
-                                <div className="form-radio-row">
-                                    <label className="radio-label">
-                                        <input 
-                                            type="radio" 
-                                            name="attendance" 
-                                            value="Yes" 
-                                            checked={rsvpAttending === "Yes"}
-                                            onChange={() => setRsvpAttending("Yes")}
-                                        />
-                                        <span>Attending</span>
-                                    </label>
-                                    <label className="radio-label">
-                                        <input 
-                                            type="radio" 
-                                            name="attendance" 
-                                            value="No" 
-                                            checked={rsvpAttending === "No"}
-                                            onChange={() => setRsvpAttending("No")}
-                                        />
-                                        <span>Declining</span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            {rsvpAttending === "Yes" && (
+                        )}
+                        
+                        <div className={`rsvp-form-container ${isSubmitted ? "hidden-form" : ""}`}>
+                            <h3>RSVP Details</h3>
+                            <form 
+                                action="https://docs.google.com/forms/d/e/1FAIpQLSerJb0shGogMDzepx8BsePdif2jqigKqwIfBSAi1owzuYTAcA/formResponse"
+                                method="POST"
+                                target="hidden_iframe"
+                                onSubmit={handleRsvpSubmit} 
+                                className="rsvp-modal-form"
+                            >
+                                {/* Hidden inputs mapping to Google Form entry parameters */}
+                                <input type="hidden" name="entry.1058395948" value={rsvpAttending} />
+                                <input type="hidden" name="entry.1741651700" value={rsvpAttending === "Yes" ? rsvpCount : ""} />
+                                
+                                <input type="hidden" name="entry.1909768101" value={rsvpGuests[0]?.name || ""} />
+                                <input type="hidden" name="entry.1771373528" value={rsvpAttending === "Yes" ? (rsvpGuests[0]?.entree || "") : ""} />
+                                
+                                <input type="hidden" name="entry.911835970" value={rsvpAttending === "Yes" && rsvpCount >= 2 ? (rsvpGuests[1]?.name || "") : ""} />
+                                <input type="hidden" name="entry.448187643" value={rsvpAttending === "Yes" && rsvpCount >= 2 ? (rsvpGuests[1]?.entree || "") : ""} />
+                                
+                                <input type="hidden" name="entry.1266679397" value={rsvpAttending === "Yes" && rsvpCount >= 3 ? (rsvpGuests[2]?.name || "") : ""} />
+                                <input type="hidden" name="entry.122115254" value={rsvpAttending === "Yes" && rsvpCount >= 3 ? (rsvpGuests[2]?.entree || "") : ""} />
+                                
+                                <input type="hidden" name="entry.350072060" value={rsvpAttending === "Yes" && rsvpCount >= 4 ? (rsvpGuests[3]?.name || "") : ""} />
+                                <input type="hidden" name="entry.44416253" value={rsvpAttending === "Yes" && rsvpCount >= 4 ? (rsvpGuests[3]?.entree || "") : ""} />
+                                
+                                <input type="hidden" name="entry.935076605" value={rsvpMessage} />
+
                                 <div className="form-group">
-                                    <label htmlFor="rsvp-count-select">Number of Guests:</label>
-                                    <select 
-                                        id="rsvp-count-select"
-                                        value={rsvpCount} 
-                                        onChange={(e) => setRsvpCount(parseInt(e.target.value))}
-                                    >
-                                        {[1,2,3,4,5,6,7,8,9,10].map(n => (
-                                            <option key={n} value={n}>{n}</option>
-                                        ))}
-                                    </select>
+                                    <label>Attendance:</label>
+                                    <div className="form-radio-row">
+                                        <button
+                                            type="button"
+                                            className={`rsvp-custom-radio ${rsvpAttending === "Yes" ? "active" : ""}`}
+                                            onClick={() => {
+                                                setRsvpAttending("Yes");
+                                                if (rsvpGuests.length === 0) {
+                                                    setRsvpGuests([{ name: "", entree: "Chicken Paella", message: "" }]);
+                                                }
+                                            }}
+                                        >
+                                            {rsvpAttending === "Yes" && <img src={PINK_FLOWER} alt="flower" className="rsvp-radio-flower" />}
+                                            <span>Attending</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className={`rsvp-custom-radio ${rsvpAttending === "No" ? "active" : ""}`}
+                                            onClick={() => setRsvpAttending("No")}
+                                        >
+                                            {rsvpAttending === "No" && <img src={PINK_FLOWER} alt="flower" className="rsvp-radio-flower" />}
+                                            <span>Declining</span>
+                                        </button>
+                                    </div>
                                 </div>
-                            )}
-                            
-                            <div className="form-group">
-                                <label htmlFor="rsvp-message-input">Message / Dietary Info:</label>
-                                <textarea 
-                                    id="rsvp-message-input" 
-                                    rows="3" 
-                                    placeholder="Any notes or dietary restrictions?"
-                                    value={rsvpMessage} 
-                                    onChange={(e) => setRsvpMessage(e.target.value)}
-                                />
-                            </div>
-                            
-                            <div className="rsvp-modal-actions">
-                                <button type="button" className="rsvp-cancel-btn" onClick={() => setIsRsvpModalOpen(false)}>
-                                    Cancel
-                                </button>
-                                <button type="submit" className="rsvp-submit-btn">
-                                    Send Email RSVP
-                                </button>
-                            </div>
-                        </form>
+                                
+                                {rsvpAttending === "Yes" && (
+                                    <div className="form-group">
+                                        <label htmlFor="rsvp-count-select">Total Number of Attendees:</label>
+                                        <select 
+                                            id="rsvp-count-select"
+                                            value={rsvpCount} 
+                                            onChange={(e) => handleCountChange(parseInt(e.target.value))}
+                                        >
+                                            {[1, 2, 3, 4].map(n => (
+                                                <option key={n} value={n}>{n}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                )}
+
+                                {rsvpAttending === "No" ? (
+                                    <div className="guest-form-section">
+                                        <div className="form-group">
+                                            <label htmlFor="rsvp-declined-name">Name:</label>
+                                            <input 
+                                                type="text" 
+                                                id="rsvp-declined-name" 
+                                                required 
+                                                placeholder="Enter your name"
+                                                value={rsvpGuests[0]?.name || ""} 
+                                                onChange={(e) => {
+                                                    const val = e.target.value;
+                                                    setRsvpGuests(prev => {
+                                                        const next = [...prev];
+                                                        if (next.length === 0) {
+                                                            next.push({ name: "", entree: "Chicken Paella", message: "" });
+                                                        }
+                                                        next[0].name = val;
+                                                        return next;
+                                                    });
+                                                }}
+                                            />
+                                        </div>
+                                        <div className="form-group party-note-group">
+                                            <label htmlFor="rsvp-party-message-decline">Note:</label>
+                                            <textarea 
+                                                id="rsvp-party-message-decline" 
+                                                rows="2"
+                                                placeholder="Leave a message for the couple..."
+                                                value={rsvpMessage} 
+                                                onChange={(e) => setRsvpMessage(e.target.value)}
+                                                style={{ resize: "vertical" }}
+                                            />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="rsvp-guests-condensed-container">
+                                        <div className="entree-header-row">
+                                            <span>Guest Details</span>
+                                            <button 
+                                                type="button" 
+                                                className="menu-info-trigger"
+                                                onClick={() => setShowMenuInfo(prev => !prev)}
+                                            >
+                                                ⓘ View Menu Details
+                                            </button>
+                                        </div>
+
+                                        {showMenuInfo && (
+                                            <div className="menu-info-details">
+                                                <p><strong>Chicken Paella:</strong> Chicken cooked with saffron, green olives, and tomato rice.</p>
+                                                <p><strong>Filet Mignon:</strong> Carved whole-beef tenderloin with béarnaise and horseradish sauces, served with creamy garlic mashed potatoes.</p>
+                                                <p><strong>Duet Plate:</strong> A half-portion of both the savory Chicken Paella and the tender Filet Mignon.</p>
+                                            </div>
+                                        )}
+
+                                        <div className="guest-rows-list">
+                                            {rsvpGuests.map((guest, idx) => (
+                                                <div key={idx} className="guest-condensed-row">
+                                                    <div className="guest-num">#{idx + 1}</div>
+                                                    <div className="guest-field name-field">
+                                                        <input 
+                                                            type="text" 
+                                                            required 
+                                                            placeholder={`Guest ${idx + 1} Name`}
+                                                            value={guest.name} 
+                                                            onChange={(e) => {
+                                                                const val = e.target.value;
+                                                                setRsvpGuests(prev => {
+                                                                    const next = [...prev];
+                                                                    next[idx].name = val;
+                                                                    return next;
+                                                                });
+                                                            }}
+                                                        />
+                                                    </div>
+                                                    <div className="guest-field entree-field">
+                                                        <select 
+                                                            value={guest.entree} 
+                                                            onChange={(e) => {
+                                                                const val = e.target.value;
+                                                                setRsvpGuests(prev => {
+                                                                    const next = [...prev];
+                                                                    next[idx].entree = val;
+                                                                    return next;
+                                                                });
+                                                            }}
+                                                        >
+                                                            <option value="Chicken Paella">Chicken Paella</option>
+                                                            <option value="Filet Mignon with Garlic Mashed Potatoes">Filet Mignon</option>
+                                                            <option value="Duet Plate">Duet Plate</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="form-group party-note-group">
+                                            <label htmlFor="rsvp-party-message">Dietary Restrictions / Note (for party):</label>
+                                            <textarea 
+                                                id="rsvp-party-message" 
+                                                rows="2"
+                                                placeholder="Allergies, restrictions, or messages"
+                                                value={rsvpMessage} 
+                                                onChange={(e) => setRsvpMessage(e.target.value)}
+                                                style={{ resize: "vertical" }}
+                                            />
+                                        </div>
+                                    </div>
+                                )}
+                                
+                                <div className="rsvp-modal-actions">
+                                    <button type="button" className="rsvp-cancel-btn" onClick={() => setIsRsvpModalOpen(false)}>
+                                        Cancel
+                                    </button>
+                                    <button type="submit" className="rsvp-submit-btn">
+                                        Submit RSVP
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             )}
+
+            {/* Invisible iframe to handle background Google Forms posting */}
+            <iframe 
+                name="hidden_iframe" 
+                id="hidden_iframe" 
+                style={{ display: "none" }} 
+                title="hidden_submit"
+            />
         </div>
     )
 }
