@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5883923d.css",
-    "main.js": "/static/js/main.3bc2dafd.js",
+    "main.js": "/static/js/main.315e6236.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/haley.png": "/static/media/haley.c99912cdc7374ab1f7ff.png",
     "static/media/desi_chris.png": "/static/media/desi_chris.16bf1bedd1243956481c.png",
@@ -11,6 +11,7 @@
     "static/media/maite.png": "/static/media/maite.37ba0954851171a03c52.png",
     "static/media/kiko_inlaw_2.png": "/static/media/kiko_inlaw_2.8095ca4c84090fdc9d9d.png",
     "static/media/ines.png": "/static/media/ines.646ceef4ce05dd0dcd39.png",
+    "static/media/kiko.png": "/static/media/kiko.95f5939f4e9ff5920515.png",
     "static/media/kiko_inlaw_1.png": "/static/media/kiko_inlaw_1.abef4abe52a0d4bc246d.png",
     "static/media/helen.png": "/static/media/helen.21dd1f023a1b29d313fa.png",
     "static/media/rawabi.png": "/static/media/rawabi.74db9c82c84d90070dc2.png",
@@ -63,11 +64,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.5883923d.css.map": "/static/css/main.5883923d.css.map",
-    "main.3bc2dafd.js.map": "/static/js/main.3bc2dafd.js.map",
+    "main.315e6236.js.map": "/static/js/main.315e6236.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5883923d.css",
-    "static/js/main.3bc2dafd.js"
+    "static/js/main.315e6236.js"
   ]
 }
