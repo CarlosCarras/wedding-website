@@ -520,10 +520,10 @@ function Home() {
                     </p>
                     <div className="rsvp-card">
                         <p className="rsvp-instructions">
-                            Click to fill out your details and generate a pre-filled RSVP email to send to us.
+                            Click to fill out your RSVP details.
                         </p>
                         <button onClick={() => setIsRsvpModalOpen(true)} className="rsvp-button-trigger">
-                            RSVP Online
+                            RSVP
                         </button>
                     </div>
                 </section>
