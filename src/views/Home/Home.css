@@ -6,7 +6,7 @@
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: clip;
 }
 
 .home-container .backdrop {
@@ -111,13 +111,18 @@
 
 /* Sticky viewport content: stays pinned */
 .hero-sticky-content {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     background-color: var(--bg-color-dark); /* dark forest/slate */
     border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    z-index: 1;
 }
 
 .hero-sticky-content .backdrop {
@@ -225,11 +230,21 @@
         font-size: 2.2em;
         margin-bottom: 1.2rem;
     }
+
+    .home-container .separator-image.first-separator {
+        margin-top: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .home-container .separator-image {
     width: 60vw;
     user-select: none;
+}
+
+.home-container .separator-image.first-separator {
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
 }
 
 .home-container .button-list {
@@ -511,12 +526,18 @@
     text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .hotel-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     background-color: #2a3c30; /* darker green hover highlight */
+}
+
+.hotel-card:hover .hotel-link {
+    color: #ebdcb2;
+    border-color: #ebdcb2;
 }
 
 .hotel-card-image {
@@ -572,8 +593,7 @@
     
     .rules-topics-list {
         flex: none;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         padding-right: 0;
@@ -582,13 +602,9 @@
     }
     
     .rule-topic-btn {
-        width: auto;
+        width: 100%;
         font-size: 0.9em;
-        padding: 0.5rem 0.8rem;
-    }
-    
-    .rule-topic-btn.active {
-        box-shadow: inset 0 -3px 0 #dfc889; /* bottom border instead of left border on mobile tabs */
+        padding: 0.6rem 0.8rem;
     }
 }
 
@@ -623,3 +639,126 @@
 .registry-info strong {
     color: #dfc889;
 }
+
+/* Grid layout to align the "+" symbol exactly in the center of the screen */
+.title-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.15em;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title-left {
+    text-align: right;
+}
+
+.title-center {
+    text-align: center;
+    padding: 0 0.15em;
+}
+
+.title-right {
+    text-align: left;
+}
+
+/* Booking Partners Section Styles */
+.booking-buttons-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.booking-partner-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.booking-partner-btn.priceline-btn {
+    background-color: #0053C6;
+    color: #ffffff;
+    border: 1px solid #0042a0;
+}
+
+.booking-partner-btn.priceline-btn:hover {
+    background-color: #0064f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 83, 198, 0.3);
+}
+
+.booking-partner-btn.expedia-btn {
+    background-color: #F8F9FA;
+    color: #1A1D20;
+    border: 1px solid #D1D5DB;
+}
+
+.booking-partner-btn.expedia-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.booking-partner-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+#gallery .gallery-container:first-of-type {
+    padding-bottom: 0;
+}
+
+/* Memorial Gallery Section Styles */
+.memorial-gallery-section {
+    margin-top: 1.8rem;
+    padding-top: 1.8rem;
+    border-top: 1px dashed rgba(223, 200, 137, 0.2);
+}
+
+.memorial-title {
+    font-family: 'Sacramento', cursive;
+    color: #dfc889;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.memorial-subtitle {
+    font-family: 'Quicksand', sans-serif;
+    color: #ebdcb2;
+    text-align: center;
+    font-size: 0.95em;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+}
+
+/* Force the 4 memorial cards to stay on the same row on desktop screens */
+.memorial-gallery-section .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+@media (min-width: 769px) {
+    .memorial-gallery-section .gallery-container {
+        flex-wrap: nowrap;
+    }
+}
+
+

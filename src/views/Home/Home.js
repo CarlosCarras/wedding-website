@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Timeline from "../../components/Timeline/Timeline";
 import Button from "../../components/Button/Button"
 import Gallery from "../../components/Gallery/Gallery";
+import Lightbox from "../../components/Lightbox/Lightbox";
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import "./Home.css"
@@ -10,12 +11,12 @@ import "./Home.css"
 const WEDDING_DATE = new Date("October 17, 2026");
 
 const HERO_IMAGES = [
-    require("../../assets/gallery/picture_1.jpg"),
-    require("../../assets/gallery/picture_2.png"),
-    require("../../assets/gallery/picture_3.jpg"),
-    require("../../assets/gallery/picture_4.png"),
-    require("../../assets/gallery/picture_5.png"),
-    require("../../assets/gallery/picture_6.png"),
+    require("../../assets/header/2019.png"),
+    require("../../assets/header/2024.png"),
+    require("../../assets/header/2020.png"),
+    require("../../assets/header/2025-2.png"),
+    require("../../assets/header/2021.png"),
+    require("../../assets/header/2025.png"),
     require("../../assets/gallery/picture_7.jpg"),
     require("../../assets/gallery/picture_8.jpg"),
     require("../../assets/gallery/picture_9.jpg"),
@@ -40,17 +41,17 @@ const DATE_STRING = `${weekday} ${restOfDate}`;
 const TIMELINE_DATA = [
     { date: "October 18 2019", title: "Our first date", description: "We went our for a bite at Cheesecake Factory and took a stroll around Celebration Pointe in Gainesville, FL.", location: "Gainesville, Florida", locationLink: "https://www.google.com/maps/place/The+Cheesecake+Factory/@29.6263379,-82.3753332,71m/data=!3m1!1e3!4m6!3m5!1s0x88e8a326a651d29f:0xccca28c6ec2ca9d2!8m2!3d29.6264215!4d-82.3752174!16s%2Fg%2F11h4zncc6_?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"},
     { date: "March 21 2025", title: "She said yes!", description: "At Piedmont Park in Atlanta, Georgia.", location: "Atlanta, Georgia", locationLink: "https://maps.app.goo.gl/XXNGUARwk1RZZ5PF7"},
-    { date: "October 18 2026", title: "The wedding", description: "Celebrating our 7-year relationship anniversary with family and friends.", location: "St. Petersburg, Florida", locationLink: "https://www.google.com/maps/place/Sunken+Gardens/@27.789574,-82.6411269,1142m/data=!3m1!1e3!4m6!3m5!1s0x88c2e1657e0a9257:0x70d77b2754fc7557!8m2!3d27.7897718!4d-82.6378269!16zL20vMDV6bHl0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"},
+    { date: "October 17 2026", title: "The wedding", description: "Celebrating our 7-year relationship anniversary with family and friends.", location: "St. Petersburg, Florida", locationLink: "https://www.google.com/maps/place/Sunken+Gardens/@27.789574,-82.6411269,1142m/data=!3m1!1e3!4m6!3m5!1s0x88c2e1657e0a9257:0x70d77b2754fc7557!8m2!3d27.7897718!4d-82.6378269!16zL20vMDV6bHl0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"},
 ];
 
 const TIMELINE_IMAGES = [
-    HERO_IMAGES[1],
-    HERO_IMAGES[3],
-    HERO_IMAGES[5]
+    require("../../assets/gallery/mari_and_carlos.png"),
+    require("../../assets/gallery/proposal.png"),
+    require("../../assets/gallery/engagement.png")
 ];
 
-const GALLERY_IMAGES = [
-    { name: "Mari + Carlos", src: require("../../assets/gallery/mari_and_carlos.JPG"), caption: "Marilyn & Carlos" },
+const GALLERY_IMAGES_BASE = [
+    { name: "Mari + Carlos", src: require("../../assets/gallery/mari_and_carlos.png"), caption: "Marilyn & Carlos" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/picture_1.jpg"), caption: "Sweet moments" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/picture_2.png"), caption: "Together" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/picture_3.jpg"), caption: "Smiling" },
@@ -68,6 +69,22 @@ const GALLERY_IMAGES = [
     { name: "Mari + Carlos", src: require("../../assets/gallery/picture_15.jpg"), caption: "Love" }
 ];
 
+const GALLERY_IMAGES = Array.from({ length: 48 }, (_, i) => {
+    const base = GALLERY_IMAGES_BASE[i % GALLERY_IMAGES_BASE.length];
+    return {
+        ...base,
+        // Optional: append index to make them distinct inside the React key structure
+        id: i
+    };
+});
+
+const MEMORIAL_IMAGES = [
+    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "Always in our hearts" },
+    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "Forever with us" },
+    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "In our thoughts" },
+    { name: "In Loving Memory", src: require("../../assets/memorial/placeholder.png"), caption: "With us in spirit" }
+];
+
 const GUEST_RULES = [
     {
         title: "Alcohol Policy",
@@ -76,6 +93,10 @@ const GUEST_RULES = [
     {
         title: "Smoking Policy",
         content: "Smoking is strictly prohibited inside the gardens and indoor facilities. It is only permitted outside the front entry gates."
+    },
+    {
+        title: "Dress Code",
+        content: "We request semi-formal or cocktail attire for our celebration. Since our ceremony and reception will be outdoors in a garden with grass and brick paths, we recommend block heels, wedges, or flats (please avoid stilettos so you don't sink into the grass). We also kindly ask that guests avoid wearing white, cream, or ivory, as well as overly casual clothing like jeans, shorts, and flip-flops."
     },
     {
         title: "Garden Sanctuary",
@@ -87,6 +108,45 @@ const GUEST_RULES = [
     }
 ];
 
+const HOTELS = [
+    {
+        name: "Hollander",
+        distance: "1.2 miles from venue",
+        website: "https://book.bookingcenter.com/01/?site=HOLLAND",
+        image: require("../../assets/hotels/hollander.png")
+    },
+    {
+        name: "Avalon",
+        distance: "1.2 miles from venue",
+        website: "https://book.bookingcenter.com/01/?site=AVAHOT",
+        image: require("../../assets/hotels/avalon.png")
+    },
+    {
+        name: "Courtyard by Marriott",
+        distance: "1.2 miles from venue",
+        website: "https://www.marriott.com/en-us/hotels/tpadt-courtyard-tampa-downtown/overview/",
+        image: require("../../assets/hotels/courtyard.png")
+    },
+    {
+        name: "Galaxy",
+        distance: "1.3 miles from venue",
+        website: "https://thegalaxyhotel.com/",
+        image: require("../../assets/hotels/galaxy.png")
+    },
+    {
+        name: "Hyatt Place",
+        distance: "1.5 miles from venue",
+        website: "https://www.hyatt.com/hyatt-place/en-US/piezd-hyatt-place-st-petersburg-downtown",
+        image: require("../../assets/hotels/hyatt.png")
+    },
+    {
+        name: "Hilton",
+        distance: "1.8 miles from venue",
+        website: "https://www.hilton.com/en/hotels/sptshhf-hilton-st-petersburg-bayfront/",
+        image: require("../../assets/hotels/hilton.png")
+    }
+];
+
 
 function Home() {
     const separator = <img src={SEPARATOR} alt="separator" className="separator-image"/>
@@ -95,6 +155,7 @@ function Home() {
     const [viewportHeight, setViewportHeight] = useState(800);
     const [isMobile, setIsMobile] = useState(false);
     const [activeRuleIndex, setActiveRuleIndex] = useState(0);
+    const [selectedHeroImage, setSelectedHeroImage] = useState(null);
 
     useEffect(() => {
         setViewportHeight(window.innerHeight);
@@ -141,78 +202,82 @@ function Home() {
         };
     };
 
-    const getStickyContentStyle = () => {
-        if (scrollOffset < viewportHeight * 2.5) {
-            return {
-                position: "fixed",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100vh",
-                zIndex: 1
-            };
-        } else {
-            return {
-                position: "absolute",
-                top: `${viewportHeight * 2.5}px`,
-                left: 0,
-                width: "100%",
-                height: "100vh",
-                zIndex: 1
-            };
-        }
-    };
-
-    return(
+    return (
         <div className="home-container">
             <div className="hero-sticky-track" id="home">
-                <div className="hero-sticky-content" style={getStickyContentStyle()}>
+                <div className="hero-sticky-content">
                     <div className="backdrop left"/>
                     <div className="backdrop right"/>
                     
                     {/* Scrollable parallax Polaroids nested inside the sticky container */}
                     <div className="hero-scrollable-polaroids">
-                        <div className="hero-scroll-card card-1" style={getCardStyle(0.1, 0.7, "15%", "4%", -6, { hide: true })}>
+                        <div 
+                            className="hero-scroll-card card-1" 
+                            style={getCardStyle(0.1, 0.7, "15%", "4%", -6, { hide: false, top: "8%", left: "5%", rotate: -6 })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[0], caption: "Tampa, FL" })}
+                        >
                             <div className="hero-scroll-polaroid">
                                 <img src={HERO_IMAGES[0]} alt="Mari + Carlos 1" />
-                                <div className="hero-scroll-caption">Together</div>
+                                <div className="hero-scroll-caption">Tampa, FL</div>
                             </div>
                         </div>
-                        <div className="hero-scroll-card card-2" style={getCardStyle(0.3, 1.0, "17%", "78%", 8, { hide: false, top: "80%", left: "8%", rotate: -6 })}>
+                        <div 
+                            className="hero-scroll-card card-2" 
+                            style={getCardStyle(0.3, 1.0, "17%", "78%", 8, { hide: false, top: "80%", left: "8%", rotate: -6 })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[1], caption: "Pasadena, CA" })}
+                        >
                             <div className="hero-scroll-polaroid">
                                 <img src={HERO_IMAGES[1]} alt="Mari + Carlos 2" />
+                                <div className="hero-scroll-caption">Pasadena, CA</div>
+                            </div>
+                        </div>
+                        <div 
+                            className="hero-scroll-card card-3" 
+                            style={getCardStyle(0.6, 1.25, "45%", "6%", 4, { hide: false, top: "11%", left: "37%", rotate: 4 })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[2], caption: "Gainesville, FL" })}
+                        >
+                            <div className="hero-scroll-polaroid">
+                                <img src={HERO_IMAGES[2]} alt="Mari + Carlos 3" />
                                 <div className="hero-scroll-caption">Gainesville, FL</div>
                             </div>
                         </div>
-                        <div className="hero-scroll-card card-3" style={getCardStyle(0.6, 1.25, "45%", "6%", 4, { hide: true })}>
-                            <div className="hero-scroll-polaroid">
-                                <img src={HERO_IMAGES[2]} alt="Mari + Carlos 3" />
-                                <div className="hero-scroll-caption">Yes! 💍</div>
-                            </div>
-                        </div>
-                        <div className="hero-scroll-card card-4" style={getCardStyle(0.8, 1.5, "47%", "80%", -5, { hide: false, top: "82%", left: "38%", rotate: 4 })}>
+                        <div 
+                            className="hero-scroll-card card-4" 
+                            style={getCardStyle(0.8, 1.5, "47%", "80%", -5, { hide: false, top: "82%", left: "38%", rotate: 4 })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[3], caption: "Atlanta, GA" })}
+                        >
                             <div className="hero-scroll-polaroid">
                                 <img src={HERO_IMAGES[3]} alt="Mari + Carlos 4" />
                                 <div className="hero-scroll-caption">Atlanta, GA</div>
                             </div>
                         </div>
-                        <div className="hero-scroll-card card-5" style={getCardStyle(1.1, 1.75, "72%", "5%", -8, { hide: true })}>
+                        <div 
+                            className="hero-scroll-card card-5" 
+                            style={getCardStyle(1.1, 1.75, "72%", "5%", -8, { hide: false, top: "8%", left: "69%", rotate: -8 })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[4], caption: "San Juan, PR" })}
+                        >
                             <div className="hero-scroll-polaroid">
                                 <img src={HERO_IMAGES[4]} alt="Mari + Carlos 5" />
-                                <div className="hero-scroll-caption">Adventure</div>
+                                <div className="hero-scroll-caption">San Juan, PR</div>
                             </div>
                         </div>
-                        <div className="hero-scroll-card card-6" style={getCardStyle(1.3, 1.95, "74%", "77%", 6, { hide: false, top: "79%", left: "68%", rotate: -5 })}>
+                        <div 
+                            className="hero-scroll-card card-6" 
+                            style={getCardStyle(1.3, 1.95, "74%", "77%", 6, { hide: false, top: "79%", left: "68%", rotate: -5 })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[5], caption: "Suwon, South Korea" })}
+                        >
                             <div className="hero-scroll-polaroid">
                                 <img src={HERO_IMAGES[5]} alt="Mari + Carlos 6" />
-                                <div className="hero-scroll-caption">Always</div>
+                                <div className="hero-scroll-caption">Suwon, South Korea</div>
                             </div>
                         </div>
                     </div>
 
                     <section className="row-entry" style={{ zIndex: 5, position: "relative", pointerEvents: "none" }}>
-                        <h1 className="title">
-                            Marilyn + Carlos 
+                        <h1 className="title title-grid">
+                            <span className="title-left">Marilyn</span>
+                            <span className="title-center">+</span>
+                            <span className="title-right">Carlos</span>
                         </h1>
                         Join us on
                         <h4 style={{ pointerEvents: "auto" }}> {DATE_STRING} </h4>
@@ -226,11 +291,11 @@ function Home() {
                     </section>
             </div>
         </div>
-        {separator}
+        <img src={SEPARATOR} alt="separator" className="separator-image first-separator"/>
             <div className="row">
                 <section className="row-entry" id="welcome">
                     <h2>Welcome!</h2>
-                    <p className="home-text">To our friends and family: We're so excited to celebrate our wedding with you. Find all the details you need to know about our big day here.</p>
+                    <p className="home-text">To our family and friends: We're so excited to celebrate our wedding with you. Find all the details you need to know about our big day here.</p>
                 </section>
             </div>
             
@@ -239,10 +304,10 @@ function Home() {
                 <section className="row-entry" id="our-story">
                     <h2>Our Story</h2>
                     <p className="home-text" style={{"textAlign": "left"}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia, arcu non dictum tincidunt, purus magna porttitor magna, eget ornare libero ipsum ut enim. Morbi rhoncus commodo consequat. Nulla vitae laoreet velit. Donec imperdiet risus ut nulla commodo scelerisque. Proin vestibulum id tellus at euismod. In eu sem suscipit neque congue pellentesque. Quisque mollis arcu turpis, a aliquam massa sodales non. Ut finibus purus at urna vestibulum posuere. Aenean congue magna purus, nec molestie mauris aliquet sed. Aliquam erat volutpat. Nulla viverra mauris nibh, eu efficitur arcu fringilla sed. Nullam pharetra iaculis bibendum. Nunc id purus vel purus fermentum fermentum.
+                        Our story began in May 2019, when we met in the Design and Manufacturing Laboratory at the University of Florida. Before long, we realized we were also taking a controls course together that same term. Between exam study sessions and intense design reviews, we quickly grew from classmates to close friends.
                     </p>
                     <p className="home-text" style={{"textAlign": "left"}}>
-                        Aenean consequat efficitur lacus, ut commodo nibh iaculis in. Donec eget euismod felis, elementum laoreet leo. Nam elementum enim turpis, eget placerat magna maximus eget. Maecenas tempus, sapien sit amet cursus lobortis, purus mi porttitor neque, quis commodo neque diam quis justo. Mauris varius tortor et velit bibendum, in pellentesque lacus imperdiet. Donec dictum elit at elit dictum fringilla. Morbi fringilla justo ultricies arcu pharetra, sed lobortis felis elementum. Praesent pharetra dolor vel dolor suscipit, at lacinia est gravida. Suspendisse vitae erat iaculis, fringilla odio sit amet, vestibulum orci. Sed sit amet pharetra.
+                        The following semester brought us even closer when we found ourselves sharing yet another class. Sitting side-by-side during lectures and working through joint study sessions, our friendship bloomed into something deeper. It wasn't long before we both developed feelings for one another, and with a gentle nudge from Teresa, the maid of honor, we finally admitted it! Once the conversation was sparked, the rest was history.
                     </p>
                     <br/>
                     <Timeline entries={TIMELINE_DATA} images={TIMELINE_IMAGES}/>
@@ -252,7 +317,7 @@ function Home() {
             {separator}
             <div className="row">
                 <section className="row-entry" id="venue">
-                    <h2>The Venue</h2>
+                    <h2>Venue</h2>
                     <p className="home-text">
                         Our wedding ceremony and reception will be held at the beautiful <strong>Sunken Gardens</strong> (Oak Pavilion & North Lawn) in St. Petersburg, Florida.
                     </p>
@@ -342,46 +407,47 @@ function Home() {
                 <section className="row-entry" id="travel">
                     <h2>Travel and Accomodations</h2>
                     <div className="hotel-cards-container">
-                        <div className="hotel-card">
-                            <img 
-                                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=400&q=80" 
-                                alt="Hollander Boutique Hotel" 
-                                className="hotel-card-image"
-                            />
-                            <h3>Hollander Boutique Hotel</h3>
-                            <div className="hotel-distance">📍 0.9 miles from venue</div>
-                            <a href="https://hollanderhotel.com/" target="_blank" rel="noreferrer" className="hotel-link">Visit Website ↗</a>
-                        </div>
-                        <div className="hotel-card">
-                            <img 
-                                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=400&q=80" 
-                                alt="Hyatt Place Downtown" 
-                                className="hotel-card-image"
-                            />
-                            <h3>Hyatt Place Downtown</h3>
-                            <div className="hotel-distance">📍 1.4 miles from venue</div>
-                            <a href="https://www.hyatt.com/hyatt-place/en-US/piezd-hyatt-place-st-petersburg-downtown" target="_blank" rel="noreferrer" className="hotel-link">Visit Website ↗</a>
-                        </div>
-                        <div className="hotel-card">
-                            <img 
-                                src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=400&q=80" 
-                                alt="The Vinoy Resort" 
-                                className="hotel-card-image"
-                            />
-                            <h3>The Vinoy Resort</h3>
-                            <div className="hotel-distance">📍 1.3 miles from venue</div>
-                            <a href="https://www.marriott.com/en-us/hotels/tpasr-the-vinoy-resort-and-golf-club-autograph-collection/overview/" target="_blank" rel="noreferrer" className="hotel-link">Visit Website ↗</a>
-                        </div>
-                        <div className="hotel-card">
-                            <img 
-                                src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=400&q=80" 
-                                alt="Hampton Inn & Suites" 
-                                className="hotel-card-image"
-                            />
-                            <h3>Hampton Inn & Suites</h3>
-                            <div className="hotel-distance">📍 1.3 miles from venue</div>
-                            <a href="https://www.hilton.com/en/hotels/piesthex-hampton-suites-st-petersburg-downtown/" target="_blank" rel="noreferrer" className="hotel-link">Visit Website ↗</a>
-                        </div>
+                        {HOTELS.map((hotel, idx) => (
+                            <a 
+                                href={hotel.website} 
+                                target="_blank" 
+                                rel="noreferrer" 
+                                className="hotel-card" 
+                                key={idx}
+                            >
+                                <div className="hotel-card-image-container">
+                                    <img 
+                                        src={hotel.image} 
+                                        alt={hotel.name} 
+                                        className="hotel-card-image"
+                                    />
+                                </div>
+                                <h3>{hotel.name}</h3>
+                                <div className="hotel-distance">📍 {hotel.distance}</div>
+                                <div className="hotel-link">Visit Website ↗</div>
+                            </a>
+                        ))}
+                    </div>
+
+                    <div className="booking-buttons-group">
+                        <a 
+                            href="https://www.priceline.com/relax-ui/listings?searchType=NEARBY&destination=68319&checkIn=20261017&checkOut=20261018&rooms=1&adults=2" 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="booking-partner-btn priceline-btn"
+                        >
+                            <img src={require("../../assets/hotels/priceline.png")} alt="Priceline" className="booking-partner-logo" />
+                            <span>Book on Priceline.com</span>
+                        </a>
+                        <a 
+                            href="https://www.expedia.com/Hotel-Search?destination=Sunken%20Gardens%2C%20St.%20Petersburg%2C%20Florida%2C%20United%20States%20of%20America&regionId=503017&latLong=27.789968%2C-82.63712&flexibility=0_DAY&d1=2026-10-17&startDate=2026-10-17&d2=2026-10-18&endDate=2026-10-18&adults=2&rooms=1&typeaheadCollationId=b039e2fa-932b-4477-beec-636351a0e9d4&sort=RECOMMENDED&previousRegionId=503017&theme=&userIntent=&semdtl=&categorySearch=&useRewards=false" 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="booking-partner-btn expedia-btn"
+                        >
+                            <img src={require("../../assets/hotels/expedia.png")} alt="Expedia" className="booking-partner-logo" />
+                            <span>Book on Expedia.com</span>
+                        </a>
                     </div>
                 </section>
             </div>
@@ -392,7 +458,7 @@ function Home() {
                     <h2>Registry</h2>
                     <p className="home-text">
                         Your presence at our wedding is the greatest gift of all, and please do not feel obligated to give anything. 
-                        However, if you would like to honor us with a gift, a financial contribution would be warmly appreciated.
+                        However, if you would like to honor us with a gift, a financial contribution toward our future together would be warmly appreciated.
                     </p>
                     <div className="registry-card">
                         <h4>Zelle Information</h4>
@@ -409,12 +475,26 @@ function Home() {
             <div className="row">
                 <section className="row-entry" id="gallery">
                     <h2>Gallery</h2>
-                    <p className="home-text" style={{"textAlign": "left"}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia, arcu non dictum tincidunt, purus magna porttitor magna, eget ornare libero ipsum ut enim. Morbi rhoncus commodo consequat. 
+                    <p className="home-text" style={{"textAlign": "center", "marginBottom": "2rem"}}>
+                        We are so grateful to have all of you in our lives!
                     </p>
                     <Gallery images={GALLERY_IMAGES}/>
+
+                    <div className="memorial-gallery-section">
+                        <h3 className="memorial-title">In Loving Memory</h3>
+                        <p className="memorial-subtitle">Remembering our loved ones and pets who are with us in spirit.</p>
+                        <Gallery images={MEMORIAL_IMAGES}/>
+                    </div>
                 </section>
             </div>
+
+            {selectedHeroImage && (
+                <Lightbox 
+                    imageSrc={selectedHeroImage.src}
+                    title={selectedHeroImage.caption}
+                    onClose={() => setSelectedHeroImage(null)}
+                />
+            )}
         </div>
     )
 }

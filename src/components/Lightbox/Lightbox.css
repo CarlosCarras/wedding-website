@@ -1,0 +1,149 @@
+/* Lightbox Modal Styles */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Higher than sticky navbars */
+    animation: fadeIn 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lightbox-card {
+    background: #ffffff;
+    padding: 16px 16px 36px 16px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    animation: scaleUp 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.lightbox-card img {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: block;
+}
+
+.lightbox-caption {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.lightbox-caption h3 {
+    font-family: Sacramento, cursive;
+    font-size: 2.2em;
+    margin: 0;
+    color: #1c2820 !important; /* dark green to contrast with white card */
+    font-weight: 600;
+}
+
+.lightbox-caption p {
+    font-size: 0.95em;
+    font-weight: 400;
+    margin: 8px 0 0 0;
+    color: #333333 !important; /* dark charcoal to contrast with white card */
+    line-height: 1.4;
+}
+
+.lightbox-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.lightbox-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, transform 0.2s;
+    line-height: 1;
+    z-index: 2001;
+}
+
+.lightbox-close:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.lightbox-close:active {
+    transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Mobile responsive sizing */
+@media (max-width: 480px) {
+    .lightbox-card {
+        padding: 10px 10px 24px 10px;
+    }
+    .lightbox-caption h3 {
+        font-size: 1.8em;
+    }
+    .lightbox-caption p {
+        font-size: 0.85em;
+    }
+    .lightbox-close {
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+}

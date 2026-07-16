@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import Lightbox from "../Lightbox/Lightbox";
 import "./Gallery.css";
 
 function Gallery({ images = [] }) {
+    const [selectedImage, setSelectedImage] = useState(null);
+
     return (
         <div className="gallery-container">
             {images.map((entry, index) => {
@@ -14,16 +17,26 @@ function Gallery({ images = [] }) {
                         className="polaroid-card" 
                         key={index}
                         style={style}
+                        onClick={() => setSelectedImage(entry)}
                     >
                         <img src={entry.src} alt={entry.name} />
                         <div className="polaroid-caption">
                             <h3>{entry.name}</h3>
                             <p>{entry.caption}</p>
-                            {entry.link && <a href={entry.link}>Read More</a>}
                         </div>
                     </div>
                 );
             })}
+
+            {selectedImage && (
+                <Lightbox 
+                    imageSrc={selectedImage.src}
+                    imageAlt={selectedImage.name}
+                    title={selectedImage.name}
+                    caption={selectedImage.caption}
+                    onClose={() => setSelectedImage(null)}
+                />
+            )}
         </div>
     );
 }

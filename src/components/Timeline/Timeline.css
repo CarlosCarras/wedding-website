@@ -127,6 +127,7 @@
     width: 100%;
     max-width: 240px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .stepper-polaroid:hover {

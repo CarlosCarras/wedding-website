@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Lightbox from "../Lightbox/Lightbox";
 import "./Timeline.css";
 
 const PINK_FLOWER = require("../../assets/icons/pink_flower.png");
 
 function Timeline({ entries, images = [] }) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+    useEffect(() => {
+        if (!isAutoPlaying) return;
+
+        const timer = setInterval(() => {
+            setActiveIndex((prevIndex) => (prevIndex + 1) % entries.length);
+        }, 2000); // automatic slide interval (2 seconds)
+
+        return () => clearInterval(timer);
+    }, [isAutoPlaying, entries.length]);
 
     return (
         <div className="timeline-stepper-container">
@@ -21,7 +34,10 @@ function Timeline({ entries, images = [] }) {
                         <button
                             key={index}
                             className={`stepper-node-btn ${activeIndex === index ? "active" : ""} ${index < activeIndex ? "completed" : ""}`}
-                            onClick={() => setActiveIndex(index)}
+                            onClick={() => {
+                                setActiveIndex(index);
+                                setIsAutoPlaying(false); // Pause auto-play when clicked
+                            }}
                         >
                             <img src={PINK_FLOWER} alt="flower" className="stepper-flower-node" />
                             <span className="stepper-node-label">{item.title}</span>
@@ -35,7 +51,13 @@ function Timeline({ entries, images = [] }) {
             <div className="stepper-card-display" key={activeIndex}>
                 {images[activeIndex] && (
                     <div className="stepper-card-image-wrapper">
-                        <div className="stepper-polaroid">
+                        <div 
+                            className="stepper-polaroid"
+                            onClick={() => {
+                                setIsLightboxOpen(true);
+                                setIsAutoPlaying(false); // Pause auto-play when polaroid clicked
+                            }}
+                        >
                             <img src={images[activeIndex]} alt={entries[activeIndex].title} />
                             <div className="stepper-polaroid-caption">{entries[activeIndex].date}</div>
                         </div>
@@ -65,6 +87,16 @@ function Timeline({ entries, images = [] }) {
                     )}
                 </div>
             </div>
+
+            {isLightboxOpen && (
+                <Lightbox 
+                    imageSrc={images[activeIndex]}
+                    imageAlt={entries[activeIndex].title}
+                    title={entries[activeIndex].title}
+                    caption={entries[activeIndex].description}
+                    onClose={() => setIsLightboxOpen(false)}
+                />
+            )}
         </div>
     );
 }
