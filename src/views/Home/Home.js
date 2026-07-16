@@ -43,7 +43,7 @@ const GALLERY_IMAGES_BASE = [
     { name: "Mari + Carlos", src: require("../../assets/gallery/families_both.png"), caption: "Families" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/space_needle.png"), caption: "Space Needle" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/mia_airport.png"), caption: "Mia Airport" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/kiko.png"), caption: "Kiko" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/helen_jasmine.png"), caption: "Helen & Jasmine" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/grandmas.png"), caption: "Grandmas" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/kiko_fam.png"), caption: "Family" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/kiko_inlaw_1.png"), caption: "Family" },
@@ -61,7 +61,9 @@ const GALLERY_IMAGES_BASE = [
     { name: "Mari + Carlos", src: require("../../assets/gallery/keishla_nicole.png"), caption: "Keishla & Nicole" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/ines.png"), caption: "Ines" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/chloe.png"), caption: "Chloe" },
-    { name: "Mari + Carlos", src: require("../../assets/gallery/james.png"), caption: "James" }
+    { name: "Mari + Carlos", src: require("../../assets/gallery/james.png"), caption: "James" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/baby_carlos.png"), caption: "Baby Carlos" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/baby_mari.png"), caption: "Baby Marilyn" }
 ];
 
 const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
@@ -551,7 +553,7 @@ function Home() {
                     <p className="home-text" style={{"textAlign": "center", "marginBottom": "2rem"}}>
                         We are so grateful to have all of you in our lives!
                     </p>
-                    <Gallery images={GALLERY_IMAGES}/>
+                    <Gallery images={GALLERY_IMAGES} breakLastTwo={true}/>
 
                     <div className="memorial-gallery-section">
                         <h3 className="memorial-title">In Loving Memory</h3>

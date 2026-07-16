@@ -58,3 +58,11 @@
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.04);
     z-index: 10;
 }
+
+/* Row break for the last 2 pictures on desktop/tablet */
+@media (min-width: 600px) {
+    .gallery-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+}
