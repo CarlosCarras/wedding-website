@@ -145,8 +145,9 @@
 .hero-scroll-card {
     position: absolute;
     pointer-events: auto; /* Allow hovers to pass through */
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), z-index 0.4s;
+    transition: z-index 0.4s;
     cursor: pointer;
+    will-change: transform;
 }
 
 .hero-scroll-polaroid {

@@ -194,13 +194,27 @@ function Home() {
     useEffect(() => {
         setViewportHeight(window.innerHeight);
         setIsMobile(window.innerWidth <= 768);
+        
+        let ticking = false;
         const handleScroll = () => {
-            setScrollOffset(window.scrollY);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setScrollOffset(window.scrollY);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
+
+        let lastWidth = window.innerWidth;
         const handleResize = () => {
-            setViewportHeight(window.innerHeight);
-            setIsMobile(window.innerWidth <= 768);
+            if (window.innerWidth !== lastWidth) {
+                lastWidth = window.innerWidth;
+                setViewportHeight(window.innerHeight);
+                setIsMobile(window.innerWidth <= 768);
+            }
         };
+
         window.addEventListener("scroll", handleScroll, { passive: true });
         window.addEventListener("resize", handleResize, { passive: true });
         return () => {
@@ -223,8 +237,9 @@ function Home() {
         const endScroll = viewportHeight * endPercent;
 
         const progress = Math.min(1, Math.max(0, (scrollOffset - startScroll) / (endScroll - startScroll)));
-        // Translate from below viewport (750px) to resting position (0px)
-        const translateY = (1 - progress) * 750;
+        // Translate from below viewport (smaller on mobile) to resting position (0px)
+        const translateDistance = isMobile ? 300 : 750;
+        const translateY = (1 - progress) * translateDistance;
         const opacity = progress;
 
         return {
