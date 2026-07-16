@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bfff74be.css",
-    "main.js": "/static/js/main.4bed8898.js",
+    "main.css": "/static/css/main.586cd14d.css",
+    "main.js": "/static/js/main.35acd6b7.js",
     "static/js/453.cd210156.chunk.js": "/static/js/453.cd210156.chunk.js",
     "static/media/galaxy.png": "/static/media/galaxy.8b590bf2d583eee54f92.png",
     "static/media/avalon.png": "/static/media/avalon.7173d25822e1b0c07afa.png",
@@ -9,6 +9,7 @@
     "static/media/hilton.png": "/static/media/hilton.ed8805b67e9be7ef674d.png",
     "static/media/courtyard.png": "/static/media/courtyard.1ef95f96402ef174cc41.png",
     "static/media/engagement.webp": "/static/media/engagement.40d184ddc9aa3c0ba014.webp",
+    "static/media/picture_3.webp": "/static/media/picture_3.c00e8d614460d5f46c90.webp",
     "static/media/hollander.png": "/static/media/hollander.0f97baba68c230fa1dd6.png",
     "static/media/proposal.webp": "/static/media/proposal.e50aa76316d11bd76006.webp",
     "static/media/floral-backdrop-r.webp": "/static/media/floral-backdrop-r.4724226632f356e39af8.webp",
@@ -23,6 +24,7 @@
     "static/media/Sacramento-Regular.ttf": "/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
     "static/media/edwardianscriptitc.ttf": "/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
     "static/media/pink_flower.webp": "/static/media/pink_flower.b0fa68e7580adef6589c.webp",
+    "static/media/nereida.webp": "/static/media/nereida.971e2b23161edec81f24.webp",
     "static/media/picture_11.webp": "/static/media/picture_11.c6c0f7ff4a570981b6f3.webp",
     "static/media/mari_and_carlos.webp": "/static/media/mari_and_carlos.2b8c85714123c3af465e.webp",
     "static/media/picture_5.webp": "/static/media/picture_5.79593864d7e8d90bf96b.webp",
@@ -39,14 +41,13 @@
     "static/media/picture_13.webp": "/static/media/picture_13.ad99e715cc7fe71c6a48.webp",
     "static/media/picture_7.webp": "/static/media/picture_7.cd47d51ecc22007168e3.webp",
     "static/media/picture_8.webp": "/static/media/picture_8.f40a219f1c7789c93485.webp",
-    "static/media/picture_3.webp": "/static/media/picture_3.6e22457ec6ce4ceeca6f.webp",
     "index.html": "/index.html",
-    "main.bfff74be.css.map": "/static/css/main.bfff74be.css.map",
-    "main.4bed8898.js.map": "/static/js/main.4bed8898.js.map",
+    "main.586cd14d.css.map": "/static/css/main.586cd14d.css.map",
+    "main.35acd6b7.js.map": "/static/js/main.35acd6b7.js.map",
     "453.cd210156.chunk.js.map": "/static/js/453.cd210156.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfff74be.css",
-    "static/js/main.4bed8898.js"
+    "static/css/main.586cd14d.css",
+    "static/js/main.35acd6b7.js"
   ]
 }
