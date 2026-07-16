@@ -34,6 +34,8 @@ const PINK_FLOWER = require("../../assets/icons/pink_flower.webp");
 const LOCATION = "St. Petersburg,  Florida";
 const REGISTRY_LINK = "https://www.amazon.com"
 
+const RSVP_EMAIL = "marilynandcarlos2026@gmail.com";
+
 const weekday = WEDDING_DATE.toLocaleDateString('en-US', { weekday: 'long' });
 const restOfDate = WEDDING_DATE.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 const DATE_STRING = `${weekday} ${restOfDate}`;
@@ -95,7 +97,7 @@ const GUEST_RULES = [
     },
     {
         title: "Dress Code",
-        content: "We request semi-formal or cocktail attire for our celebration. Since our ceremony and reception will be outdoors in a garden with grass and brick paths, we recommend block heels, wedges, or flats (please avoid stilettos so you don't sink into the grass). We also kindly ask that guests avoid wearing white, cream, or ivory, as well as overly casual clothing like jeans, shorts, and flip-flops."
+        content: "We request formal or cocktail attire for our celebration. Since our ceremony and reception will be outdoors in a garden with grass and brick paths, we recommend block heels, wedges, or flats (please avoid stilettos so you don't sink into the grass). We also kindly ask that guests avoid wearing white, cream, or ivory, as well as overly casual clothing like jeans, shorts, and flip-flops."
     },
     {
         title: "Garden Sanctuary",
@@ -155,6 +157,27 @@ function Home() {
     const [isMobile, setIsMobile] = useState(false);
     const [activeRuleIndex, setActiveRuleIndex] = useState(0);
     const [selectedHeroImage, setSelectedHeroImage] = useState(null);
+
+    // RSVP form states
+    const [isRsvpModalOpen, setIsRsvpModalOpen] = useState(false);
+    const [rsvpName, setRsvpName] = useState("");
+    const [rsvpAttending, setRsvpAttending] = useState("Yes");
+    const [rsvpCount, setRsvpCount] = useState(1);
+    const [rsvpMessage, setRsvpMessage] = useState("");
+
+    const handleRsvpSubmit = (e) => {
+        e.preventDefault();
+        const subject = `Wedding RSVP - ${rsvpName}`;
+        const body = `Name: ${rsvpName}\nAttending: ${rsvpAttending === "Yes" ? "Yes, happily attending" : "No, regretfully declining"}\nNumber of Guests: ${rsvpAttending === "Yes" ? rsvpCount : 0}\nNote/Dietary: ${rsvpMessage || "None"}`;
+        window.location.href = `mailto:${RSVP_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Reset states and close modal
+        setIsRsvpModalOpen(false);
+        setRsvpName("");
+        setRsvpAttending("Yes");
+        setRsvpCount(1);
+        setRsvpMessage("");
+    };
 
     useEffect(() => {
         setViewportHeight(window.innerHeight);
@@ -453,6 +476,24 @@ function Home() {
 
             {separator}
             <div className="row">
+                <section className="row-entry" id="rsvp">
+                    <h2>RSVP</h2>
+                    <p className="home-text">
+                        We would love to celebrate our special day with you! Please let us know if you can make it by October 1st, 2026.
+                    </p>
+                    <div className="rsvp-card">
+                        <p className="rsvp-instructions">
+                            Click to fill out your details and generate a pre-filled RSVP email to send to us.
+                        </p>
+                        <button onClick={() => setIsRsvpModalOpen(true)} className="rsvp-button-trigger">
+                            RSVP Online
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            {separator}
+            <div className="row">
                 <section className="row-entry" id="registry">
                     <h2>Registry</h2>
                     <p className="home-text">
@@ -493,6 +534,95 @@ function Home() {
                     title={selectedHeroImage.caption}
                     onClose={() => setSelectedHeroImage(null)}
                 />
+            )}
+
+            {isRsvpModalOpen && (
+                <div className="rsvp-modal-overlay">
+                    <div className="rsvp-modal-card">
+                        <button 
+                            className="rsvp-modal-close-btn" 
+                            onClick={() => setIsRsvpModalOpen(false)}
+                            aria-label="Close modal"
+                        >
+                            &times;
+                        </button>
+                        <h3>RSVP Details</h3>
+                        <form onSubmit={handleRsvpSubmit} className="rsvp-modal-form">
+                            <div className="form-group">
+                                <label htmlFor="rsvp-name-input">Name(s):</label>
+                                <input 
+                                    type="text" 
+                                    id="rsvp-name-input" 
+                                    required 
+                                    placeholder="Enter your name(s)"
+                                    value={rsvpName} 
+                                    onChange={(e) => setRsvpName(e.target.value)}
+                                />
+                            </div>
+                            
+                            <div className="form-group">
+                                <label>Attendance:</label>
+                                <div className="form-radio-row">
+                                    <label className="radio-label">
+                                        <input 
+                                            type="radio" 
+                                            name="attendance" 
+                                            value="Yes" 
+                                            checked={rsvpAttending === "Yes"}
+                                            onChange={() => setRsvpAttending("Yes")}
+                                        />
+                                        <span>Attending</span>
+                                    </label>
+                                    <label className="radio-label">
+                                        <input 
+                                            type="radio" 
+                                            name="attendance" 
+                                            value="No" 
+                                            checked={rsvpAttending === "No"}
+                                            onChange={() => setRsvpAttending("No")}
+                                        />
+                                        <span>Declining</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            {rsvpAttending === "Yes" && (
+                                <div className="form-group">
+                                    <label htmlFor="rsvp-count-select">Number of Guests:</label>
+                                    <select 
+                                        id="rsvp-count-select"
+                                        value={rsvpCount} 
+                                        onChange={(e) => setRsvpCount(parseInt(e.target.value))}
+                                    >
+                                        {[1,2,3,4,5,6,7,8,9,10].map(n => (
+                                            <option key={n} value={n}>{n}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                            )}
+                            
+                            <div className="form-group">
+                                <label htmlFor="rsvp-message-input">Message / Dietary Info:</label>
+                                <textarea 
+                                    id="rsvp-message-input" 
+                                    rows="3" 
+                                    placeholder="Any notes or dietary restrictions?"
+                                    value={rsvpMessage} 
+                                    onChange={(e) => setRsvpMessage(e.target.value)}
+                                />
+                            </div>
+                            
+                            <div className="rsvp-modal-actions">
+                                <button type="button" className="rsvp-cancel-btn" onClick={() => setIsRsvpModalOpen(false)}>
+                                    Cancel
+                                </button>
+                                <button type="submit" className="rsvp-submit-btn">
+                                    Send Email RSVP
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             )}
         </div>
     )

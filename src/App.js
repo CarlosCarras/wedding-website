@@ -12,6 +12,7 @@ function App() {
         "Home": '#home',
         "Our Story": '#our-story',
         "Venue": '#venue',
+        "RSVP": '#rsvp',
         "Registry": '#registry',
         "Gallery": '#gallery'
     };

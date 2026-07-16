@@ -6,7 +6,7 @@ function Footer() {
     return (
         <div className="footer-container">
             <span> 
-                Built from scratch by Carlos and Marilyn &nbsp;❤️&nbsp; Source code available on 
+                Built by Carlos and Marilyn &nbsp;❤️&nbsp; Source code available on 
                 <a href="https://github.com/CarlosCarras/CarlosCarras.github.io" target="_blank" rel="noopener noreferrer"> GitHub </a>
             </span>
 

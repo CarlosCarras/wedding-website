@@ -762,4 +762,230 @@
     }
 }
 
+/* RSVP Card styles */
+.rsvp-card {
+    margin: 2.5rem auto;
+    max-width: 420px;
+    padding: 2.2rem;
+    background-color: #223127;
+    border: 1px solid rgba(223, 200, 137, 0.22);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.rsvp-instructions {
+    font-size: 0.95rem;
+    color: #ebdcb2;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.rsvp-button-trigger {
+    background-color: #dfc889; /* solid gold button */
+    border: none;
+    color: #121a15; /* dark green text */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(223, 200, 137, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+}
+
+.rsvp-button-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(223, 200, 137, 0.5);
+    background-color: #ebdcb2; /* lighter gold hover */
+}
+
+/* RSVP Modal Overlay */
+.rsvp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RSVP Modal Card */
+.rsvp-modal-card {
+    position: relative;
+    background-color: #223127; /* dark green block matches theme */
+    border: 1px solid rgba(223, 200, 137, 0.25);
+    border-radius: 12px;
+    padding: 2.2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    text-align: left;
+    box-sizing: border-box;
+    animation: rsvpModalScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.rsvp-modal-card h3 {
+    color: #dfc889; /* gold title */
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 0.8rem;
+}
+
+.rsvp-modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #a4b2a7;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+    outline: none;
+}
+
+.rsvp-modal-close-btn:hover {
+    color: #dfc889;
+}
+
+.rsvp-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    color: #dfc889;
+    font-size: 0.9em;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 0.7rem;
+    color: #ebdcb2;
+    font-family: inherit;
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #dfc889;
+}
+
+.form-radio-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ebdcb2;
+    font-size: 0.95em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: #dfc889;
+    cursor: pointer;
+}
+
+.rsvp-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.rsvp-cancel-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    color: #a4b2a7;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.rsvp-cancel-btn:hover {
+    color: #dfc889;
+    border-color: #dfc889;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.rsvp-submit-btn {
+    background-color: #dfc889;
+    border: none;
+    border-radius: 20px;
+    color: #121a15;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(223, 200, 137, 0.2);
+    outline: none;
+}
+
+.rsvp-submit-btn:hover {
+    background-color: #ebdcb2;
+    box-shadow: 0 6px 15px rgba(223, 200, 137, 0.35);
+    transform: translateY(-1px);
+}
+
+@keyframes rsvpModalScale {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
