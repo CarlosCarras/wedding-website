@@ -51,7 +51,7 @@
     font-family: Sacramento, cursive;
     font-size: 2.2em;
     margin: 0;
-    color: #1c2820 !important; /* dark green to contrast with white card */
+    color: #1c2820 !important; /* restored original dark forest green */
     font-weight: 600;
 }
 
@@ -59,7 +59,7 @@
     font-size: 0.95em;
     font-weight: 400;
     margin: 8px 0 0 0;
-    color: #333333 !important; /* dark charcoal to contrast with white card */
+    color: #8c732b !important; /* matching lighter medium gold */
     line-height: 1.4;
 }
 

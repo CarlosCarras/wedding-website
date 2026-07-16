@@ -41,7 +41,7 @@
     font-family: Sacramento, cursive;
     font-size: 1.25em; /* downscaled font size */
     margin: 0;
-    color: #2c3e50;
+    color: #2c3e50 !important; /* restored original dark slate */
     font-weight: 600;
 }
 
@@ -49,7 +49,7 @@
     font-size: 0.75em; /* downscaled subtext */
     font-weight: 400;
     margin: 3px 0 0 0;
-    color: #7f8c8d;
+    color: #8c732b !important; /* lighter medium gold */
 }
 
 /* Subtle Pop & Straighten hover transition */

@@ -28,7 +28,7 @@ const restOfDate = WEDDING_DATE.toLocaleDateString('en-US', { month: 'long', day
 const DATE_STRING = `${weekday} ${restOfDate}`;
 
 const TIMELINE_DATA = [
-    { date: "October 18 2019", title: "Our first date", description: "We went our for a bite at Cheesecake Factory and took a stroll around Celebration Pointe in Gainesville, FL.", location: "Gainesville, Florida", locationLink: "https://www.google.com/maps/place/The+Cheesecake+Factory/@29.6263379,-82.3753332,71m/data=!3m1!1e3!4m6!3m5!1s0x88e8a326a651d29f:0xccca28c6ec2ca9d2!8m2!3d29.6264215!4d-82.3752174!16s%2Fg%2F11h4zncc6_?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"},
+    { date: "October 18 2019", title: "Our first date", description: "We went out for a bite at Cheesecake Factory and took a stroll around Celebration Pointe in Gainesville, FL.", location: "Gainesville, Florida", locationLink: "https://www.google.com/maps/place/The+Cheesecake+Factory/@29.6263379,-82.3753332,71m/data=!3m1!1e3!4m6!3m5!1s0x88e8a326a651d29f:0xccca28c6ec2ca9d2!8m2!3d29.6264215!4d-82.3752174!16s%2Fg%2F11h4zncc6_?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"},
     { date: "March 21 2025", title: "She said yes!", description: "At Piedmont Park in Atlanta, Georgia.", location: "Atlanta, Georgia", locationLink: "https://maps.app.goo.gl/XXNGUARwk1RZZ5PF7"},
     { date: "October 17 2026", title: "The wedding", description: "Celebrating our 7-year relationship anniversary with family and friends.", location: "St. Petersburg, Florida", locationLink: "https://www.google.com/maps/place/Sunken+Gardens/@27.789574,-82.6411269,1142m/data=!3m1!1e3!4m6!3m5!1s0x88c2e1657e0a9257:0x70d77b2754fc7557!8m2!3d27.7897718!4d-82.6378269!16zL20vMDV6bHl0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"},
 ];
@@ -40,7 +40,7 @@ const TIMELINE_IMAGES = [
 ];
 
 const GALLERY_IMAGES_BASE = [
-    { name: "Mari + Carlos", src: require("../../assets/gallery/families_both.png"), caption: "Families" },
+    { name: "Our parents", src: require("../../assets/gallery/families_both.png"), caption: "Atlanta, GA" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/space_needle.png"), caption: "Space Needle" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/mia_airport.png"), caption: "Mia Airport" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/helen_jasmine.png"), caption: "Helen & Jasmine" },
@@ -62,6 +62,8 @@ const GALLERY_IMAGES_BASE = [
     { name: "Mari + Carlos", src: require("../../assets/gallery/ines.png"), caption: "Ines" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/chloe.png"), caption: "Chloe" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/james.png"), caption: "James" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/helen.png"), caption: "Helen" },
+    { name: "Mari + Carlos", src: require("../../assets/gallery/janaki_1.png"), caption: "Janaki" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/baby_carlos.png"), caption: "Baby Carlos" },
     { name: "Mari + Carlos", src: require("../../assets/gallery/baby_mari.png"), caption: "Baby Marilyn" }
 ];
@@ -74,14 +76,13 @@ const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
 const MEMORIAL_IMAGES = [
     { name: "Nereida Gonzalez", src: require("../../assets/memorial/nereida.webp"), caption: "" },
     { name: "Teresita Chavez", src: require("../../assets/archive_gallery/picture_3.webp"), caption: "" },
-    { name: "Gabriel Dantzler", src: require("../../assets/archive_gallery/picture_3.webp"), caption: "" },
-    { name: "In Loving Memory", src: require("../../assets/archive_gallery/picture_3.webp"), caption: "" }
+    { name: "Gabriel Dantzler", src: require("../../assets/archive_gallery/picture_3.webp"), caption: "" }
 ];
 
 const GUEST_RULES = [
     {
         title: "Alcohol Policy",
-        content: "Soft drinks will be provided, but we will not be providing alcohol. Outside alcohol is not allowed the venue; any alcohol brought in by guests is at their own responsibility and may be confiscated by security."
+        content: "Soft drinks will be provided, but we will not be providing alcohol. Outside alcohol is not allowed in the venue; any alcohol brought in by guests is at their own responsibility and may be confiscated by security."
     },
     {
         title: "Smoking Policy",
