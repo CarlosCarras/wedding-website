@@ -47,7 +47,7 @@ const TIMELINE_DATA = [
 const TIMELINE_IMAGES = [
     require("../../assets/gallery/mari_and_carlos.webp"),
     require("../../assets/gallery/proposal.webp"),
-    require("../../assets/gallery/engagement.webp")
+    require("../../assets/gallery/engagement.webp"),
 ];
 
 const GALLERY_IMAGES_BASE = [
