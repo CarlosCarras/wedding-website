@@ -1,5 +1,4 @@
 .App {
-    overflow-x: clip;
     text-align: center;
     
     --default-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
