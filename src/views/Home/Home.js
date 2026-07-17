@@ -84,7 +84,7 @@ const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
 
 const MEMORIAL_IMAGES = [
     { name: "Nereida Gonzalez", src: require("../../assets/memorial/nereida.webp"), caption: "" },
-    { name: "Teresita Chavez", src: require("../../assets/archive_gallery/picture_3.webp"), caption: "" },
+    { name: "Teresita Chavez", src: require("../../assets/memorial/teresita.webp"), caption: "" },
     { name: "Gabe Dantzler", src: require("../../assets/memorial/gabe.webp"), caption: "" }
 ];
 
