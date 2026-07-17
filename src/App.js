@@ -19,8 +19,8 @@ function App() {
 
     return (
         <Router>
+            <Navbar sections={sections} />
             <div className={"App"}>
-                <Navbar sections={sections} />
                 <Routes>
                     <Route exact path="/" element={<Home/>} />   
                     <Route path="*" element={<NotFound />} />
