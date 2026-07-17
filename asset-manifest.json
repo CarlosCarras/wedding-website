@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e474bffa.css",
-    "main.js": "/static/js/main.f0cec0a6.js",
+    "main.js": "/static/js/main.02c1d6ba.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/haley.webp": "/static/media/haley.c99912cdc7374ab1f7ff.webp",
     "static/media/desi_chris.webp": "/static/media/desi_chris.16bf1bedd1243956481c.webp",
@@ -45,9 +45,9 @@
     "static/media/hilton.png": "/static/media/hilton.ed8805b67e9be7ef674d.png",
     "static/media/courtyard.png": "/static/media/courtyard.1ef95f96402ef174cc41.png",
     "static/media/engagement.webp": "/static/media/engagement.40d184ddc9aa3c0ba014.webp",
-    "static/media/picture_3.webp": "/static/media/picture_3.c00e8d614460d5f46c90.webp",
     "static/media/hollander.png": "/static/media/hollander.0f97baba68c230fa1dd6.png",
     "static/media/proposal.webp": "/static/media/proposal.e50aa76316d11bd76006.webp",
+    "static/media/teresita.webp": "/static/media/teresita.f9e83c22e657d9e7d9bf.webp",
     "static/media/floral-backdrop-r.webp": "/static/media/floral-backdrop-r.4724226632f356e39af8.webp",
     "static/media/2020.webp": "/static/media/2020.c0543a343b306e8e7278.webp",
     "static/media/2025-2.webp": "/static/media/2025-2.0b93a2cb3ad3d1ab0b88.webp",
@@ -65,11 +65,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.e474bffa.css.map": "/static/css/main.e474bffa.css.map",
-    "main.f0cec0a6.js.map": "/static/js/main.f0cec0a6.js.map",
+    "main.02c1d6ba.js.map": "/static/js/main.02c1d6ba.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e474bffa.css",
-    "static/js/main.f0cec0a6.js"
+    "static/js/main.02c1d6ba.js"
   ]
 }
