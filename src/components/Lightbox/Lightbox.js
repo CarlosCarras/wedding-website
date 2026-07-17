@@ -28,10 +28,7 @@ function Lightbox({ imageSrc, imageAlt = "", title = "", caption = "", link = ""
             >
                 &times;
             </button>
-            <div 
-                className="lightbox-card"
-                onClick={(e) => e.stopPropagation()}
-            >
+            <div className="lightbox-card">
                 <img src={imageSrc} alt={imageAlt || title} />
                 {(title || caption) && (
                     <div className="lightbox-caption">

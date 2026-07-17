@@ -15,6 +15,7 @@
     animation: fadeIn 0.3s ease;
     padding: 20px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .lightbox-card {
@@ -39,6 +40,7 @@
     object-fit: contain;
     border: 1px solid rgba(0, 0, 0, 0.08);
     display: block;
+    cursor: pointer;
 }
 
 .lightbox-caption {
