@@ -40,41 +40,41 @@ const TIMELINE_IMAGES = [
 ];
 
 const GALLERY_IMAGES_BASE = [
-    { name: "Baby Carlos", src: require("../../assets/gallery/baby_carlos.png"), caption: "San Juan, PR" },
-    { name: "Baby Mari", src: require("../../assets/gallery/baby_mari.png"), caption: "Placetas, Cuba" },
-    { name: "Our parents", src: require("../../assets/gallery/families_both.png"), caption: "Atlanta, GA" },
-    { name: "Carlos' Family", src: require("../../assets/gallery/space_needle.png"), caption: "Seattle, WA" },
-    { name: "Mari's Family", src: require("../../assets/gallery/mia_airport.png"), caption: "Miami, FL" },
-    { name: "Helen + Jasmine", src: require("../../assets/gallery/helen_jasmine.png"), caption: "Miami, FL" },
-    { name: "Mari's Grandmas", src: require("../../assets/gallery/grandmas.png"), caption: "Miami, FL" },
-    { name: "Kenny + Clau", src: require("../../assets/gallery/kiko_fam.png"), caption: "Miami, FL" },
-    { name: "Tere + Jose + Clau", src: require("../../assets/gallery/kiko_inlaw_1.png"), caption: "Miami, FL" },
-    { name: "Tere + Angel", src: require("../../assets/gallery/kiko_inlaw_2.png"), caption: "Miami, FL" },
-    { name: "Grety + Tia", src: require("../../assets/gallery/aunt_grethel.png"), caption: "Miami, FL" },
-    { name: "Teresa", src: require("../../assets/gallery/teresa.png"), caption: "Atlanta, GA" },
-    { name: "Teresa + Sam", src: require("../../assets/gallery/teresa_sam.png"), caption: "Lisboa, Portugal" },
-    { name: "Kimmy", src: require("../../assets/gallery/kimmy.png"), caption: "Miami, FL" },
-    { name: "Kimmy + Rawabi", src: require("../../assets/gallery/rawabi.png"), caption: "Coral Gables, FL" },
-    { name: "Janaki", src: require("../../assets/gallery/janaki.png"), caption: "Gainesville, FL" },
-    { name: "Janaki + Jonathan", src: require("../../assets/gallery/janaki_jonathan.png"), caption: "Chicago, IL" },
-    { name: "Reshma", src: require("../../assets/gallery/reshma.png"), caption: "Gainesville, FL" },
-    { name: "Reshma + Mathew", src: require("../../assets/gallery/reshma_mathew.png"), caption: "Gainesville, FL" },
-    { name: "Desi + Chris", src: require("../../assets/gallery/desi_chris.png"), caption: "Atlanta, GA" },
-    { name: "Haley", src: require("../../assets/gallery/haley.png"), caption: "Atlanta, GA" },
-    { name: "Dylan", src: require("../../assets/gallery/dylan.png"), caption: "Gainesville, FL" },
-    { name: "Maite", src: require("../../assets/gallery/maite.png"), caption: "Gainesville, FL" },
-    { name: "Maite + Migue", src: require("../../assets/gallery/maite_migue.png"), caption: "Miami, FL" },
-    { name: "Julia", src: require("../../assets/gallery/julia.png"), caption: "Atlanta, GA" },
-    { name: "UF Roomies", src: require("../../assets/gallery/keishla_nicole.png"), caption: "Gainesville, FL" },
-    { name: "Ines", src: require("../../assets/gallery/ines.png"), caption: "Gainesville, FL" },
-    { name: "Ines + Kyle", src: require("../../assets/gallery/ines_kyle.png"), caption: "George, WA" },
-    { name: "Chloe", src: require("../../assets/gallery/chloe.png"), caption: "Gainesville, FL" },
-    { name: "Chloe + Wes", src: require("../../assets/gallery/wes_chloe.png"), caption: "Asheville, NC" },
-    { name: "James", src: require("../../assets/gallery/james.png"), caption: "Gainesville, FL" },
-    { name: "Mark", src: require("../../assets/gallery/mark.png"), caption: "Breckenridge, CO" },
-    { name: "Mina + Matt", src: require("../../assets/gallery/mina_matt.png"), caption: "Atlanta, GA" },
-    { name: "Janaki", src: require("../../assets/gallery/janaki_1.png"), caption: "Gainesville, FL" },
-    { name: "Kiko", src: require("../../assets/gallery/kiko.png"), caption: "Miami, FL" }
+    { name: "Baby Carlos", src: require("../../assets/gallery/baby_carlos.webp"), caption: "San Juan, PR" },
+    { name: "Baby Mari", src: require("../../assets/gallery/baby_mari.webp"), caption: "Placetas, Cuba" },
+    { name: "Our parents", src: require("../../assets/gallery/families_both.webp"), caption: "Atlanta, GA" },
+    { name: "Carlos' Family", src: require("../../assets/gallery/space_needle.webp"), caption: "Seattle, WA" },
+    { name: "Mari's Family", src: require("../../assets/gallery/mia_airport.webp"), caption: "Miami, FL" },
+    { name: "Helen + Jasmine", src: require("../../assets/gallery/helen_jasmine.webp"), caption: "Miami, FL" },
+    { name: "Mari's Grandmas", src: require("../../assets/gallery/grandmas.webp"), caption: "Miami, FL" },
+    { name: "Kenny + Clau", src: require("../../assets/gallery/kiko_fam.webp"), caption: "Miami, FL" },
+    { name: "Tere + Jose + Clau", src: require("../../assets/gallery/kiko_inlaw_1.webp"), caption: "Miami, FL" },
+    { name: "Tere + Angel", src: require("../../assets/gallery/kiko_inlaw_2.webp"), caption: "Miami, FL" },
+    { name: "Grety + Tia", src: require("../../assets/gallery/aunt_grethel.webp"), caption: "Miami, FL" },
+    { name: "Teresa", src: require("../../assets/gallery/teresa.webp"), caption: "Atlanta, GA" },
+    { name: "Teresa + Sam", src: require("../../assets/gallery/teresa_sam.webp"), caption: "Lisboa, Portugal" },
+    { name: "Kimmy", src: require("../../assets/gallery/kimmy.webp"), caption: "Miami, FL" },
+    { name: "Kimmy + Rawabi", src: require("../../assets/gallery/rawabi.webp"), caption: "Coral Gables, FL" },
+    { name: "Janaki", src: require("../../assets/gallery/janaki.webp"), caption: "Gainesville, FL" },
+    { name: "Janaki + Jonathan", src: require("../../assets/gallery/janaki_jonathan.webp"), caption: "Chicago, IL" },
+    { name: "Reshma", src: require("../../assets/gallery/reshma.webp"), caption: "Gainesville, FL" },
+    { name: "Reshma + Mathew", src: require("../../assets/gallery/reshma_mathew.webp"), caption: "Gainesville, FL" },
+    { name: "Desi + Chris", src: require("../../assets/gallery/desi_chris.webp"), caption: "Atlanta, GA" },
+    { name: "Haley", src: require("../../assets/gallery/haley.webp"), caption: "Atlanta, GA" },
+    { name: "Dylan", src: require("../../assets/gallery/dylan.webp"), caption: "Gainesville, FL" },
+    { name: "Maite", src: require("../../assets/gallery/maite.webp"), caption: "Gainesville, FL" },
+    { name: "Maite + Migue", src: require("../../assets/gallery/maite_migue.webp"), caption: "Miami, FL" },
+    { name: "Julia", src: require("../../assets/gallery/julia.webp"), caption: "Atlanta, GA" },
+    { name: "UF Roomies", src: require("../../assets/gallery/keishla_nicole.webp"), caption: "Gainesville, FL" },
+    { name: "Ines", src: require("../../assets/gallery/ines.webp"), caption: "Gainesville, FL" },
+    { name: "Ines + Kyle", src: require("../../assets/gallery/ines_kyle.webp"), caption: "George, WA" },
+    { name: "Chloe", src: require("../../assets/gallery/chloe.webp"), caption: "Gainesville, FL" },
+    { name: "Chloe + Wes", src: require("../../assets/gallery/wes_chloe.webp"), caption: "Asheville, NC" },
+    { name: "James", src: require("../../assets/gallery/james.webp"), caption: "Gainesville, FL" },
+    { name: "Mark", src: require("../../assets/gallery/mark.webp"), caption: "Breckenridge, CO" },
+    { name: "Mina + Matt", src: require("../../assets/gallery/mina_matt.webp"), caption: "Atlanta, GA" },
+    { name: "Janaki", src: require("../../assets/gallery/janaki_1.webp"), caption: "Gainesville, FL" },
+    { name: "Kiko", src: require("../../assets/gallery/kiko.webp"), caption: "Miami, FL" }
 ];
 
 const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
@@ -83,9 +83,9 @@ const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
 }));
 
 const MEMORIAL_IMAGES = [
-    { name: "Nereida Gonzalez", src: require("../../assets/memorial/nereida.png"), caption: "" },
+    { name: "Nereida Gonzalez", src: require("../../assets/memorial/nereida.webp"), caption: "" },
     { name: "Teresita Chavez", src: require("../../assets/archive_gallery/picture_3.webp"), caption: "" },
-    { name: "Gabe Dantzler", src: require("../../assets/memorial/gabe.png"), caption: "" }
+    { name: "Gabe Dantzler", src: require("../../assets/memorial/gabe.webp"), caption: "" }
 ];
 
 const GUEST_RULES = [

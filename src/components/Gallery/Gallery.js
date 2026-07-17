@@ -5,6 +5,22 @@ import "./Gallery.css";
 function Gallery({ images = [], breakLastTwo = false, breakFirstTwo = false }) {
     const [selectedImage, setSelectedImage] = useState(null);
 
+    const selectedIndex = selectedImage ? images.indexOf(selectedImage) : -1;
+
+    const handlePrev = () => {
+        if (selectedIndex !== -1) {
+            const prevIndex = (selectedIndex - 1 + images.length) % images.length;
+            setSelectedImage(images[prevIndex]);
+        }
+    };
+
+    const handleNext = () => {
+        if (selectedIndex !== -1) {
+            const nextIndex = (selectedIndex + 1) % images.length;
+            setSelectedImage(images[nextIndex]);
+        }
+    };
+
     return (
         <div className="gallery-container">
             {images.map((entry, index) => {
@@ -38,6 +54,8 @@ function Gallery({ images = [], breakLastTwo = false, breakFirstTwo = false }) {
                     title={selectedImage.name}
                     caption={selectedImage.caption}
                     onClose={() => setSelectedImage(null)}
+                    onPrev={handlePrev}
+                    onNext={handleNext}
                 />
             )}
         </div>
