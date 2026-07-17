@@ -13,7 +13,7 @@ const HERO_IMAGES = [
     require("../../assets/header/2019.webp"),
     require("../../assets/header/2024.webp"),
     require("../../assets/header/2020.webp"),
-    require("../../assets/header/2025-2.webp"),
+    require("../../assets/header/2026.webp"),
     require("../../assets/header/2021.webp"),
     require("../../assets/header/2025.webp")
 ];
@@ -303,11 +303,11 @@ function Home() {
                         <div 
                             className="hero-scroll-card card-4" 
                             style={getCardStyle(0.8, 1.5, "47%", "80%", -5, { hide: false, top: "82%", left: "38%", rotate: 4 })}
-                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[3], caption: "Atlanta, GA" })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[5], caption: "Suwon, South Korea" })}
                         >
                             <div className="hero-scroll-polaroid">
-                                <img src={HERO_IMAGES[3]} alt="Mari + Carlos 4" />
-                                <div className="hero-scroll-caption">Atlanta, GA</div>
+                                <img src={HERO_IMAGES[5]} alt="Mari + Carlos 4" />
+                                <div className="hero-scroll-caption">Suwon, South Korea</div>
                             </div>
                         </div>
                         <div 
@@ -323,11 +323,11 @@ function Home() {
                         <div 
                             className="hero-scroll-card card-6" 
                             style={getCardStyle(1.3, 1.95, "74%", "77%", 6, { hide: false, top: "79%", left: "68%", rotate: -5 })}
-                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[5], caption: "Suwon, South Korea" })}
+                            onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[3], caption: "Atlanta, GA" })}
                         >
                             <div className="hero-scroll-polaroid">
-                                <img src={HERO_IMAGES[5]} alt="Mari + Carlos 6" />
-                                <div className="hero-scroll-caption">Suwon, South Korea</div>
+                                <img src={HERO_IMAGES[3]} alt="Mari + Carlos 6" />
+                                <div className="hero-scroll-caption">Atlanta, GA</div>
                             </div>
                         </div>
                     </div>
