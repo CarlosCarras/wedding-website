@@ -409,7 +409,7 @@ function Home() {
                                         <span className="venue-event">Ceremony Begins</span>
                                     </div>
                                     <div className="venue-timeline-item-node">
-                                        <span className="venue-time">5:30 PM</span>
+                                        <span className="venue-time">5:45 PM</span>
                                         <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
                                         <span className="venue-event">Cocktail Hour</span>
                                     </div>
