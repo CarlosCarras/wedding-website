@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1b103ee3.css",
-    "main.js": "/static/js/main.b7e0e988.js",
+    "main.js": "/static/js/main.d6edb338.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/haley.png": "/static/media/haley.c99912cdc7374ab1f7ff.png",
     "static/media/desi_chris.png": "/static/media/desi_chris.16bf1bedd1243956481c.png",
@@ -15,6 +15,7 @@
     "static/media/kiko_inlaw_1.png": "/static/media/kiko_inlaw_1.abef4abe52a0d4bc246d.png",
     "static/media/helen.png": "/static/media/helen.21dd1f023a1b29d313fa.png",
     "static/media/rawabi.png": "/static/media/rawabi.74db9c82c84d90070dc2.png",
+    "static/media/gabe.png": "/static/media/gabe.9bca14f3c71d564a1221.png",
     "static/media/baby_carlos.png": "/static/media/baby_carlos.d166f6875be9bc29f992.png",
     "static/media/teresa.png": "/static/media/teresa.666fa1901a7741b1457b.png",
     "static/media/reshma.png": "/static/media/reshma.4ec865a97a4301c4884a.png",
@@ -35,6 +36,7 @@
     "static/media/helen_jasmine.png": "/static/media/helen_jasmine.d5ebde2eabc068918f2e.png",
     "static/media/reshma_mathew.png": "/static/media/reshma_mathew.054a8d703268a055ebd4.png",
     "static/media/wes_chloe.png": "/static/media/wes_chloe.7918c9a43717f9c38c06.png",
+    "static/media/nereida.png": "/static/media/nereida.bd674447ef54a23db15d.png",
     "static/media/galaxy.png": "/static/media/galaxy.8b590bf2d583eee54f92.png",
     "static/media/mia_airport.png": "/static/media/mia_airport.18d125a77c0dccad03cb.png",
     "static/media/baby_mari.png": "/static/media/baby_mari.bfdf55af99f1d98c5738.png",
@@ -59,16 +61,15 @@
     "static/media/Sacramento-Regular.ttf": "/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
     "static/media/edwardianscriptitc.ttf": "/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
     "static/media/pink_flower.webp": "/static/media/pink_flower.b0fa68e7580adef6589c.webp",
-    "static/media/nereida.webp": "/static/media/nereida.971e2b23161edec81f24.webp",
     "static/media/mari_and_carlos.webp": "/static/media/mari_and_carlos.2b8c85714123c3af465e.webp",
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.1b103ee3.css.map": "/static/css/main.1b103ee3.css.map",
-    "main.b7e0e988.js.map": "/static/js/main.b7e0e988.js.map",
+    "main.d6edb338.js.map": "/static/js/main.d6edb338.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1b103ee3.css",
-    "static/js/main.b7e0e988.js"
+    "static/js/main.d6edb338.js"
   ]
 }
