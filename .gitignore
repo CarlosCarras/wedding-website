@@ -41,3 +41,4 @@ packages/react-devtools-timeline/dist
 
 guests.txt
 guest_rsvp_links.csv
+generate_guest_links.py

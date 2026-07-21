@@ -24,6 +24,7 @@ def main():
     
     # Get base wedding URL from command argument or prompt
     base_url = "http://localhost:3000"
+    # base_url = "http://marilynandcarlos.com"
     if len(sys.argv) > 1:
         base_url = sys.argv[1].rstrip('/')
     else:
