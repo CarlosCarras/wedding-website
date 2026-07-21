@@ -101,7 +101,7 @@ const GALLERY_IMAGES_BASE = [
     { name: "Jake", src: require("../../assets/gallery/jake.webp"), caption: "Tampa, FL" },
     { name: "Maite", src: require("../../assets/gallery/maite.webp"), caption: "Gainesville, FL" },
     { name: "Maite + Migue", src: require("../../assets/gallery/maite_migue.webp"), caption: "Miami, FL" },
-    { name: "Daniel", src: require("../../assets/gallery/daniel.webp"), caption: "San Bayamon, PR" },
+    { name: "Daniel", src: require("../../assets/gallery/daniel.webp"), caption: "Bayamon, PR" },
     { name: "UF Roomies", src: require("../../assets/gallery/keishla_nicole.webp"), caption: "Gainesville, FL" },
     { name: "Ines", src: require("../../assets/gallery/ines.webp"), caption: "Gainesville, FL" },
     { name: "Ines + Kyle", src: require("../../assets/gallery/ines_kyle.webp"), caption: "George, WA" },
