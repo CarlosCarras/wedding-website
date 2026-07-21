@@ -113,7 +113,6 @@ const GALLERY_IMAGES_BASE = [
     { name: "Mark", src: require("../../assets/gallery/mark.webp"), caption: "Breckenridge, CO" },
     { name: "Matt + Mina", src: require("../../assets/gallery/mina_matt.webp"), caption: "Atlanta, GA" },
     { name: "Jonathan, Matteo + Jaxon", src: require("../../assets/gallery/jonathan_matteo_jaxon.webp"), caption: "Gainesville, FL" },
-    { name: "Kiko", src: require("../../assets/gallery/kiko.webp"), caption: "Miami, FL" },
     { name: "Jonathan, Sean + Jaxon", src: require("../../assets/gallery/jonathan_sean_jaxon.webp"), caption: "Gainesville, FL" },
     { name: "Julia + Andrew", src: require("../../assets/gallery/julia_andrew.webp"), caption: "Atlanta, GA" },
 ];
