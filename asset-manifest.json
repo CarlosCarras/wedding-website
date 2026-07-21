@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4d90af28.css",
-    "main.js": "/static/js/main.f4f79e34.js",
+    "main.js": "/static/js/main.b9c02a91.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/gabe.webp": "/static/media/gabe.336d2424ec00f65b9539.webp",
     "static/media/galaxy.png": "/static/media/galaxy.8b590bf2d583eee54f92.png",
@@ -38,7 +38,6 @@
     "static/media/2024.webp": "/static/media/2024.98012bd4d1497c5ae5ad.webp",
     "static/media/dylan.webp": "/static/media/dylan.7a83401f715d534edde6.webp",
     "static/media/maite_migue.webp": "/static/media/maite_migue.1363dab9ca04c2259618.webp",
-    "static/media/teresa_sam.webp": "/static/media/teresa_sam.98690904faec3b793faf.webp",
     "static/media/jake.webp": "/static/media/jake.b4daf10130fdb709a9a6.webp",
     "static/media/baby_carlos.webp": "/static/media/baby_carlos.bdc318720cdc264adff9.webp",
     "static/media/mina_matt.webp": "/static/media/mina_matt.acf5f790057fe6d53f62.webp",
@@ -54,7 +53,6 @@
     "static/media/kiko_inlaw_1.webp": "/static/media/kiko_inlaw_1.8311173cce0f87fa9864.webp",
     "static/media/janaki.webp": "/static/media/janaki.f2bb3b78dc451d193a29.webp",
     "static/media/torres_family.webp": "/static/media/torres_family.578f10e3bce20deb4763.webp",
-    "static/media/kiko.webp": "/static/media/kiko.44fd336aed8d67d9e7a1.webp",
     "static/media/chloe.webp": "/static/media/chloe.4bcd8186f39536e7c9d9.webp",
     "static/media/Sacramento-Regular.ttf": "/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
     "static/media/edwardianscriptitc.ttf": "/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
@@ -63,6 +61,7 @@
     "static/media/wes_chloe.webp": "/static/media/wes_chloe.da3b1d5a9344454ab6ff.webp",
     "static/media/valeria.webp": "/static/media/valeria.045012172aa0e3afdf4c.webp",
     "static/media/nereida.webp": "/static/media/nereida.4caf45c723138adb0381.webp",
+    "static/media/teresa_sam.webp": "/static/media/teresa_sam.1cfc8ba5953192f74a25.webp",
     "static/media/james.webp": "/static/media/james.6d6f313ad6d19847d912.webp",
     "static/media/baby_mari.webp": "/static/media/baby_mari.1af7443236036fa76ef6.webp",
     "static/media/mia_airport.webp": "/static/media/mia_airport.90978abf438bc4c39caa.webp",
@@ -73,11 +72,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.4d90af28.css.map": "/static/css/main.4d90af28.css.map",
-    "main.f4f79e34.js.map": "/static/js/main.f4f79e34.js.map",
+    "main.b9c02a91.js.map": "/static/js/main.b9c02a91.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d90af28.css",
-    "static/js/main.f4f79e34.js"
+    "static/js/main.b9c02a91.js"
   ]
 }
