@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4d90af28.css",
-    "main.js": "/static/js/main.e21a3d88.js",
+    "main.js": "/static/js/main.09ea2739.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/gabe.webp": "/static/media/gabe.336d2424ec00f65b9539.webp",
     "static/media/galaxy.png": "/static/media/galaxy.8b590bf2d583eee54f92.png",
@@ -24,6 +24,7 @@
     "static/media/desi_chris.webp": "/static/media/desi_chris.9641451b3a8da0adb253.webp",
     "static/media/proposal.webp": "/static/media/proposal.e50aa76316d11bd76006.webp",
     "static/media/teresita.webp": "/static/media/teresita.f9e83c22e657d9e7d9bf.webp",
+    "static/media/aakash_eudorah.webp": "/static/media/aakash_eudorah.4d6656cb086f6d931fa8.webp",
     "static/media/families_both.webp": "/static/media/families_both.1d746b73d2a79e5aa9d7.webp",
     "static/media/janaki_jonathan.webp": "/static/media/janaki_jonathan.651092bea7bc08d6c6e3.webp",
     "static/media/floral-backdrop-r.webp": "/static/media/floral-backdrop-r.4724226632f356e39af8.webp",
@@ -72,11 +73,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.4d90af28.css.map": "/static/css/main.4d90af28.css.map",
-    "main.e21a3d88.js.map": "/static/js/main.e21a3d88.js.map",
+    "main.09ea2739.js.map": "/static/js/main.09ea2739.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d90af28.css",
-    "static/js/main.e21a3d88.js"
+    "static/js/main.09ea2739.js"
   ]
 }
