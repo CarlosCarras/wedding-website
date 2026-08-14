@@ -333,13 +333,20 @@ function Home() {
         const translateY = (1 - progress) * translateDistance;
         const opacity = progress;
 
-        return {
+        const style = {
             position: "absolute",
             top: restingTop,
-            left: restingLeft,
             transform: `translateY(${translateY}px) rotate(${restingRotation}deg)`,
             opacity: opacity,
         };
+
+        if (typeof restingLeft === "string" && restingLeft.startsWith("right:")) {
+            style.right = restingLeft.replace("right:", "");
+        } else {
+            style.left = restingLeft;
+        }
+
+        return style;
     };
 
     return (
@@ -363,7 +370,7 @@ function Home() {
                         </div>
                         <div 
                             className="hero-scroll-card card-2" 
-                            style={getCardStyle(0.3, 1.0, "17%", "78%", 8, { hide: false, top: "80%", left: "8%", rotate: -6 })}
+                            style={getCardStyle(0.3, 1.0, "17%", "right: 4%", 8, { hide: false, top: "80%", left: "8%", rotate: -6 })}
                             onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[1], caption: "Pasadena, CA" })}
                         >
                             <div className="hero-scroll-polaroid">
@@ -383,7 +390,7 @@ function Home() {
                         </div>
                         <div 
                             className="hero-scroll-card card-4" 
-                            style={getCardStyle(0.8, 1.5, "47%", "80%", -5, { hide: false, top: "82%", left: "38%", rotate: 4 })}
+                            style={getCardStyle(0.8, 1.5, "47%", "right: 2%", -5, { hide: false, top: "82%", left: "38%", rotate: 4 })}
                             onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[5], caption: "Suwon, South Korea" })}
                         >
                             <div className="hero-scroll-polaroid">
@@ -403,7 +410,7 @@ function Home() {
                         </div>
                         <div 
                             className="hero-scroll-card card-6" 
-                            style={getCardStyle(1.3, 1.95, "74%", "77%", 6, { hide: false, top: "79%", left: "68%", rotate: -5 })}
+                            style={getCardStyle(1.3, 1.95, "74%", "right: 5%", 6, { hide: false, top: "79%", left: "68%", rotate: -5 })}
                             onClick={() => setSelectedHeroImage({ src: HERO_IMAGES[3], caption: "Atlanta, GA" })}
                         >
                             <div className="hero-scroll-polaroid">
