@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.4d90af28.css",
-    "main.js": "/static/js/main.706dc952.js",
+    "main.js": "/static/js/main.34336936.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
+    "static/media/aunt_grethel.png": "/static/media/aunt_grethel.9d76e92a45e20557c832.png",
     "static/media/gabe.webp": "/static/media/gabe.336d2424ec00f65b9539.webp",
     "static/media/ore.webp": "/static/media/ore.86e7485be3e740540f24.webp",
     "static/media/ore_sophie.webp": "/static/media/ore_sophie.4df4a9e6924075305a83.webp",
@@ -19,7 +20,6 @@
     "static/media/kiko_fam.webp": "/static/media/kiko_fam.bb7cead981941562df64.webp",
     "static/media/mark.webp": "/static/media/mark.fb41479b914bb70ec3e3.webp",
     "static/media/kiko_inlaw_2.webp": "/static/media/kiko_inlaw_2.d92c47dbf5aafe1677f5.webp",
-    "static/media/aunt_grethel.webp": "/static/media/aunt_grethel.95cbf262036864b23c8e.webp",
     "static/media/hollander.png": "/static/media/hollander.0f97baba68c230fa1dd6.png",
     "static/media/maite.webp": "/static/media/maite.e44d4b21a4638d56cebe.webp",
     "static/media/christoph.webp": "/static/media/christoph.8f3a5768490c5b3916ec.webp",
@@ -76,11 +76,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.4d90af28.css.map": "/static/css/main.4d90af28.css.map",
-    "main.706dc952.js.map": "/static/js/main.706dc952.js.map",
+    "main.34336936.js.map": "/static/js/main.34336936.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d90af28.css",
-    "static/js/main.706dc952.js"
+    "static/js/main.34336936.js"
   ]
 }
