@@ -106,8 +106,8 @@ const GALLERY_IMAGES_BASE = [
     { name: "Ines", src: require("../../assets/gallery/ines.webp"), caption: "Gainesville, FL" },
     { name: "Ines + Kyle", src: require("../../assets/gallery/ines_kyle.webp"), caption: "George, WA" },
     { name: "Chloe", src: require("../../assets/gallery/chloe.webp"), caption: "Gainesville, FL" },
-    { name: "Christoph", src: require("../../assets/gallery/christoph.webp"), caption: "Atlanta, GA" },
     { name: "Wes + Chloe", src: require("../../assets/gallery/wes_chloe.webp"), caption: "Asheville, NC" },
+    { name: "Christoph", src: require("../../assets/gallery/christoph.webp"), caption: "Atlanta, GA" },
     { name: "Luis", src: require("../../assets/gallery/luis.webp"), caption: "Atlanta, GA" },
     { name: "James", src: require("../../assets/gallery/james.webp"), caption: "Gainesville, FL" },
     { name: "Mark", src: require("../../assets/gallery/mark.webp"), caption: "Breckenridge, CO" },
@@ -115,7 +115,9 @@ const GALLERY_IMAGES_BASE = [
     { name: "Jonathan, Matteo + Jaxon", src: require("../../assets/gallery/jonathan_matteo_jaxon.webp"), caption: "Gainesville, FL" },
     { name: "Jonathan, Sean + Jaxon", src: require("../../assets/gallery/jonathan_sean_jaxon.webp"), caption: "Gainesville, FL" },
     { name: "Julia + Andrew", src: require("../../assets/gallery/julia_andrew.webp"), caption: "Atlanta, GA" },
-    { name: "Aakash + Eudorah", src: require("../../assets/gallery/aakash_eudorah.webp"), caption: "Atlanta, GA" }
+    { name: "Eudorah + Aakash", src: require("../../assets/gallery/aakash_eudorah.webp"), caption: "Atlanta, GA" },
+    { name: "Ore", src: require("../../assets/gallery/ore.webp"), caption: "Gainesville, FL" },
+    { name: "Ore + Sophie", src: require("../../assets/gallery/ore_sophie.webp"), caption: "The Ocean" }
 ];
 
 const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
@@ -126,6 +128,7 @@ const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
 const MEMORIAL_IMAGES = [
     { name: "Nereida Gonzalez", src: require("../../assets/memorial/nereida.webp"), caption: "" },
     { name: "Teresita Chavez", src: require("../../assets/memorial/teresita.webp"), caption: "" },
+    { name: "Eusebio Gutierrez", src: require("../../assets/memorial/eusebio.webp"), caption: "" },
     { name: "Gabe Dantzler", src: require("../../assets/memorial/gabe.webp"), caption: "" }
 ];
 
