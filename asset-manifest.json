@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4d90af28.css",
-    "main.js": "/static/js/main.4ddaed5a.js",
+    "main.js": "/static/js/main.6d45b9ab.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/aunt_grethel.png": "/static/media/aunt_grethel.9d76e92a45e20557c832.png",
     "static/media/gabe.webp": "/static/media/gabe.336d2424ec00f65b9539.webp",
@@ -58,7 +58,9 @@
     "static/media/janaki.webp": "/static/media/janaki.f2bb3b78dc451d193a29.webp",
     "static/media/torres_family.webp": "/static/media/torres_family.578f10e3bce20deb4763.webp",
     "static/media/chloe.webp": "/static/media/chloe.4bcd8186f39536e7c9d9.webp",
+    "static/media/daniel_amaris.webp": "/static/media/daniel_amaris.badaead57fcce98ef69b.webp",
     "static/media/Sacramento-Regular.ttf": "/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
+    "static/media/rebekah.webp": "/static/media/rebekah.a84cc785babb181edb8d.webp",
     "static/media/edwardianscriptitc.ttf": "/static/media/edwardianscriptitc.bf7838a6543a08923c39.ttf",
     "static/media/pink_flower.webp": "/static/media/pink_flower.b0fa68e7580adef6589c.webp",
     "static/media/julia_andrew.webp": "/static/media/julia_andrew.11426774cfa381b26443.webp",
@@ -76,11 +78,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.4d90af28.css.map": "/static/css/main.4d90af28.css.map",
-    "main.4ddaed5a.js.map": "/static/js/main.4ddaed5a.js.map",
+    "main.6d45b9ab.js.map": "/static/js/main.6d45b9ab.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d90af28.css",
-    "static/js/main.4ddaed5a.js"
+    "static/js/main.6d45b9ab.js"
   ]
 }
