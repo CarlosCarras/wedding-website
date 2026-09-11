@@ -121,7 +121,8 @@ const GALLERY_IMAGES_BASE = [
     { name: "Ore", src: require("../../assets/gallery/ore.webp"), caption: "Gainesville, FL" },
     { name: "Ore + Sophie", src: require("../../assets/gallery/ore_sophie.webp"), caption: "The Ocean" },
     { name: "Jessica + Mikayla", src: require("../../assets/gallery/mikayla_jessica.webp"), caption: "Gainesville, FL" },
-    { name: "Eduardo + Jessica", src: require("../../assets/gallery/jessica_eduardo.webp"), caption: "Lakeland, FL" }
+    { name: "Eduardo + Jessica", src: require("../../assets/gallery/jessica_eduardo.webp"), caption: "Lakeland, FL" },
+    { name: "Emily Marchi", src: require("../../assets/gallery/em_sullivan.webp"), caption: "Gainesville, FL" }
 ];
 
 const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
