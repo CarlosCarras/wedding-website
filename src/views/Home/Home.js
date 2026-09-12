@@ -121,7 +121,10 @@ const GALLERY_IMAGES_BASE = [
     { name: "Julia + Andrew", src: require("../../assets/gallery/julia_andrew.webp"), caption: "Atlanta, GA" },
     { name: "Eudorah + Aakash", src: require("../../assets/gallery/aakash_eudorah.webp"), caption: "Atlanta, GA" },
     { name: "Ore", src: require("../../assets/gallery/ore.webp"), caption: "Gainesville, FL" },
-    { name: "Ore + Sophie", src: require("../../assets/gallery/ore_sophie.webp"), caption: "The Ocean" }
+    { name: "Ore + Sophie", src: require("../../assets/gallery/ore_sophie.webp"), caption: "The Ocean" },
+    { name: "Jessica + Mikayla", src: require("../../assets/gallery/mikayla_jessica.webp"), caption: "Gainesville, FL" },
+    { name: "Eduardo + Jessica", src: require("../../assets/gallery/jessica_eduardo.webp"), caption: "Lakeland, FL" },
+    { name: "Emily Marchi", src: require("../../assets/gallery/em_sullivan.webp"), caption: "Gainesville, FL" }
 ];
 
 const GALLERY_IMAGES = GALLERY_IMAGES_BASE.map((img, i) => ({
@@ -704,19 +707,19 @@ function Home() {
                             >
                                 {/* Hidden inputs mapping to Google Form entry parameters */}
                                 <input type="hidden" name="entry.1058395948" value={rsvpGuests.some(g => g.isAttending) ? "Yes" : "No"} />
-                                <input type="hidden" name="entry.1741651700" value={rsvpGuests.filter(g => g.isAttending).length} />
+                                <input type="hidden" name="entry.1741651700" value={rsvpGuests.filter(g => g.isAttending).length || ""} />
                                 
                                 <input type="hidden" name="entry.1909768101" value={rsvpGuests[0]?.name || ""} />
-                                <input type="hidden" name="entry.1771373528" value={rsvpGuests[0]?.isAttending ? (rsvpGuests[0]?.entree || "") : "Declined"} />
+                                <input type="hidden" name="entry.1771373528" value={rsvpGuests[0]?.isAttending ? (rsvpGuests[0]?.entree || "") : ""} />
                                 
                                 <input type="hidden" name="entry.911835970" value={rsvpCount >= 2 ? (rsvpGuests[1]?.name || "") : ""} />
-                                <input type="hidden" name="entry.448187643" value={rsvpCount >= 2 ? (rsvpGuests[1]?.isAttending ? (rsvpGuests[1]?.entree || "") : "Declined") : ""} />
+                                <input type="hidden" name="entry.448187643" value={rsvpCount >= 2 ? (rsvpGuests[1]?.isAttending ? (rsvpGuests[1]?.entree || "") : "") : ""} />
                                 
                                 <input type="hidden" name="entry.1266679397" value={rsvpCount >= 3 ? (rsvpGuests[2]?.name || "") : ""} />
-                                <input type="hidden" name="entry.122115254" value={rsvpCount >= 3 ? (rsvpGuests[2]?.isAttending ? (rsvpGuests[2]?.entree || "") : "Declined") : ""} />
+                                <input type="hidden" name="entry.122115254" value={rsvpCount >= 3 ? (rsvpGuests[2]?.isAttending ? (rsvpGuests[2]?.entree || "") : "") : ""} />
                                 
                                 <input type="hidden" name="entry.350072060" value={rsvpCount >= 4 ? (rsvpGuests[3]?.name || "") : ""} />
-                                <input type="hidden" name="entry.44416253" value={rsvpCount >= 4 ? (rsvpGuests[3]?.isAttending ? (rsvpGuests[3]?.entree || "") : "Declined") : ""} />
+                                <input type="hidden" name="entry.44416253" value={rsvpCount >= 4 ? (rsvpGuests[3]?.isAttending ? (rsvpGuests[3]?.entree || "") : "") : ""} />
                                 
                                 <input type="hidden" name="entry.935076605" value={rsvpMessage} />
 
