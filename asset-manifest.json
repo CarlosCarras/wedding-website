@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4d90af28.css",
-    "main.js": "/static/js/main.4349f656.js",
+    "main.js": "/static/js/main.d09a3bb8.js",
     "static/js/453.762d212b.chunk.js": "/static/js/453.762d212b.chunk.js",
     "static/media/jessica_eduardo.webp": "/static/media/jessica_eduardo.7d245a036a1922ca2eb4.webp",
     "static/media/aunt_grethel.png": "/static/media/aunt_grethel.9d76e92a45e20557c832.png",
@@ -73,6 +73,7 @@
     "static/media/valeria.webp": "/static/media/valeria.045012172aa0e3afdf4c.webp",
     "static/media/nereida.webp": "/static/media/nereida.4caf45c723138adb0381.webp",
     "static/media/teresa_sam.webp": "/static/media/teresa_sam.1cfc8ba5953192f74a25.webp",
+    "static/media/ilias.webp": "/static/media/ilias.5ee7e460aa0359dc4c89.webp",
     "static/media/james.webp": "/static/media/james.6d6f313ad6d19847d912.webp",
     "static/media/baby_mari.webp": "/static/media/baby_mari.1af7443236036fa76ef6.webp",
     "static/media/mia_airport.webp": "/static/media/mia_airport.90978abf438bc4c39caa.webp",
@@ -83,11 +84,11 @@
     "static/media/separator.webp": "/static/media/separator.e01f9224918937f121ba.webp",
     "index.html": "/index.html",
     "main.4d90af28.css.map": "/static/css/main.4d90af28.css.map",
-    "main.4349f656.js.map": "/static/js/main.4349f656.js.map",
+    "main.d09a3bb8.js.map": "/static/js/main.d09a3bb8.js.map",
     "453.762d212b.chunk.js.map": "/static/js/453.762d212b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d90af28.css",
-    "static/js/main.4349f656.js"
+    "static/js/main.d09a3bb8.js"
   ]
 }
