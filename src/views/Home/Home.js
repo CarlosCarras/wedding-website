@@ -122,6 +122,7 @@ const GALLERY_IMAGES_BASE = [
     { name: "Eudorah + Aakash", src: require("../../assets/gallery/aakash_eudorah.webp"), caption: "Atlanta, GA" },
     { name: "Ore", src: require("../../assets/gallery/ore.webp"), caption: "Gainesville, FL" },
     { name: "Ore + Sophie", src: require("../../assets/gallery/ore_sophie.webp"), caption: "The Ocean" },
+    { name: "Ilias", src: require("../../assets/gallery/ilias.webp"), caption: "Key Largo, FL" },
     { name: "Jessica + Mikayla", src: require("../../assets/gallery/mikayla_jessica.webp"), caption: "Gainesville, FL" },
     { name: "Eduardo + Jessica", src: require("../../assets/gallery/jessica_eduardo.webp"), caption: "Lakeland, FL" },
     { name: "Emily Marchi", src: require("../../assets/gallery/em_sullivan.webp"), caption: "Gainesville, FL" }
