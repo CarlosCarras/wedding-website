@@ -617,7 +617,7 @@ function Home() {
                 <section className="row-entry" id="rsvp">
                     <h2>RSVP</h2>
                     <p className="home-text">
-                        We would love to celebrate our special day with you! Please let us know if you can make it by October 1st, 2026.
+                        We would love to celebrate our special day with you! Please let us know if you can make it by September 27th, 2026.
                     </p>
                     <div className="rsvp-card">
                         <p className="rsvp-instructions">
