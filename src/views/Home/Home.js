@@ -148,7 +148,7 @@ const MEMORIAL_IMAGES = [
 const GUEST_RULES = [
     {
         title: "Alcohol Policy",
-        content: "Soft drinks will be provided, but we will not be providing alcohol. Outside alcohol is not allowed in the venue; any alcohol brought in by guests is at their own responsibility and may be confiscated by security."
+        content: "Soft drinks will be provided, but we will not be providing alcohol except champagne for the toast. Outside alcohol is not allowed in the venue; any alcohol brought in by guests is at their own responsibility and may be confiscated by security."
     },
     {
         title: "Smoking Policy",
