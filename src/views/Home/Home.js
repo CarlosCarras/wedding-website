@@ -88,6 +88,7 @@ const GALLERY_IMAGES_BASE = [
     { name: "Tia + Grety", src: require("../../assets/gallery/aunt_grethel.png"), caption: "Miami, FL" },
     { name: "Torres Family", src: require("../../assets/gallery/torres_family.webp"), caption: "Carolina, PR" },
     { name: "Glory + Hector", src: require("../../assets/gallery/glory_hector.webp"), caption: "Caguas, PR" },
+    { name: "Maria del Mar + Mike", src: require("../../assets/gallery/maria_mike.webp"), caption: "Carolina, PR" },
     { name: "Teresa", src: require("../../assets/gallery/teresa.webp"), caption: "Atlanta, GA" },
     { name: "Teresa + Sam", src: require("../../assets/gallery/teresa_sam.webp"), caption: "Lisboa, Portugal" },
     { name: "Kimmy", src: require("../../assets/gallery/kimmy.webp"), caption: "Miami, FL" },
