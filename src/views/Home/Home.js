@@ -111,6 +111,7 @@ const GALLERY_IMAGES_BASE = [
     { name: "UF Roomies", src: require("../../assets/gallery/keishla_nicole.webp"), caption: "Gainesville, FL" },
     { name: "Ines", src: require("../../assets/gallery/ines.webp"), caption: "Gainesville, FL" },
     { name: "Ines + Kyle", src: require("../../assets/gallery/ines_kyle.webp"), caption: "George, WA" },
+    { name: "Ilias + Thibault", src: require("../../assets/gallery/ilias_thibault.webp"), caption: "Panama City, FL" },
     { name: "Chloe", src: require("../../assets/gallery/chloe.webp"), caption: "Gainesville, FL" },
     { name: "Wes + Chloe", src: require("../../assets/gallery/wes_chloe.webp"), caption: "Asheville, NC" },
     { name: "Christoph", src: require("../../assets/gallery/christoph.webp"), caption: "Atlanta, GA" },
