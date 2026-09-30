@@ -86,7 +86,9 @@ const GALLERY_IMAGES_BASE = [
     { name: "Jose + Clau + Tere", src: require("../../assets/gallery/kiko_inlaw_1.webp"), caption: "Miami, FL" },
     { name: "Angel + Tere", src: require("../../assets/gallery/kiko_inlaw_2.webp"), caption: "Miami, FL" },
     { name: "Tia + Grety", src: require("../../assets/gallery/aunt_grethel.png"), caption: "Miami, FL" },
-    { name: "Torres Family", src: require("../../assets/gallery/torres_family.webp"), caption: "Carlonia, PR" },
+    { name: "Torres Family", src: require("../../assets/gallery/torres_family.webp"), caption: "Carolina, PR" },
+    { name: "Glory + Hector", src: require("../../assets/gallery/glory_hector.webp"), caption: "Caguas, PR" },
+    { name: "Maria del Mar + Mike", src: require("../../assets/gallery/maria_mike.webp"), caption: "Carolina, PR" },
     { name: "Teresa", src: require("../../assets/gallery/teresa.webp"), caption: "Atlanta, GA" },
     { name: "Teresa + Sam", src: require("../../assets/gallery/teresa_sam.webp"), caption: "Lisboa, Portugal" },
     { name: "Kimmy", src: require("../../assets/gallery/kimmy.webp"), caption: "Miami, FL" },
@@ -147,7 +149,7 @@ const MEMORIAL_IMAGES = [
 const GUEST_RULES = [
     {
         title: "Alcohol Policy",
-        content: "Soft drinks will be provided, but we will not be providing alcohol. Outside alcohol is not allowed in the venue; any alcohol brought in by guests is at their own responsibility and may be confiscated by security."
+        content: "Soft drinks will be provided, but we will not be providing alcohol except champagne for the toast. Outside alcohol is not allowed in the venue; any alcohol brought in by guests is at their own responsibility and may be confiscated by security."
     },
     {
         title: "Smoking Policy",
@@ -509,7 +511,7 @@ function Home() {
                                         <span className="venue-event">Ceremony Begins</span>
                                     </div>
                                     <div className="venue-timeline-item-node">
-                                        <span className="venue-time">5:45 PM</span>
+                                        <span className="venue-time">5:30 PM</span>
                                         <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
                                         <span className="venue-event">Cocktail Hour</span>
                                     </div>
@@ -616,7 +618,7 @@ function Home() {
                 <section className="row-entry" id="rsvp">
                     <h2>RSVP</h2>
                     <p className="home-text">
-                        We would love to celebrate our special day with you! Please let us know if you can make it by October 1st, 2026.
+                        We would love to celebrate our special day with you! Please let us know if you can make it by September 27th, 2026.
                     </p>
                     <div className="rsvp-card">
                         <p className="rsvp-instructions">
