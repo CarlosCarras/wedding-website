@@ -550,14 +550,14 @@ function Home() {
                             <br/>
                             Name: <strong>Marilyn Braojos</strong>
                         </div>
-                        <a 
+                        {/* <a 
                             href="https://www.zellepay.com/go/zelle" 
                             target="_blank" 
                             rel="noreferrer" 
                             className="zelle-btn"
                         >
                             Send with Zelle
-                        </a>
+                        </a> */}
                     </div>
                 </section>
             </div>
