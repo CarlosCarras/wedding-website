@@ -10,9 +10,9 @@ import NotFound from './views/NotFound/NotFound';
 function App() {
     const sections = {
         "Home": '#home',
+        "Photos": '#photos',
         "Our Story": '#our-story',
         "Venue": '#venue',
-        "RSVP": '#rsvp',
         "Registry": '#registry',
         "Gallery": '#gallery'
     };

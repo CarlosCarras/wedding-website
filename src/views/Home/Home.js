@@ -23,6 +23,10 @@ const SEPARATOR = require("../../assets/backdrops/separator.webp");
 const PINK_FLOWER = require("../../assets/icons/pink_flower.webp");
 const LOCATION = "St. Petersburg,  Florida";
 
+// iCloud Shared Album links (paste your URLs here when ready)
+const GUEST_PHOTOS_ICLOUD_URL = "https://www.icloud.com/photos/#/sc,031u31VL2G57QVEDj0r5XCX_A/";
+const PHOTOGRAPHER_PHOTOS_ICLOUD_URL = "";
+
 const XOR_KEY = "carlosandmari2026"; // Secret key for decoding, matches Python script
 
 function decodeGuestName(base64) {
@@ -440,23 +444,58 @@ function Home() {
                             <span className="title-center">+</span>
                             <span className="title-right">Carlos</span>
                         </h1>
-                        Join us on
+                        Officially married as of
                         <h4 style={{ pointerEvents: "auto" }}> {DATE_STRING} </h4>
-                        at
+                        in
                         <h4 style={{ pointerEvents: "auto" }}> {LOCATION} </h4>
 
-                        <p className="home-text" style={{ pointerEvents: "auto" }}> for our wedding ceremony. We'll see you in </p><br/>
+                        <p className="home-text" style={{ pointerEvents: "auto" }}> Thank you for celebrating this incredible day with us, we made memories we will never forget. </p><br/>
                         <div style={{ pointerEvents: "auto" }}>
-                            <FlipClockCountdown to={WEDDING_DATE} className='flip-clock'/>  
+                            <FlipClockCountdown to={WEDDING_DATE} hideOnComplete={false} className='flip-clock'/>  
                         </div>
                     </section>
             </div>
         </div>
         <img src={SEPARATOR} alt="separator" className="separator-image first-separator"/>
             <div className="row">
-                <section className="row-entry" id="welcome">
-                    <h2>Welcome!</h2>
-                    <p className="home-text">To our family and friends: We're so excited to celebrate our wedding with you. Find all the details you need to know about our big day here.</p>
+                <section className="row-entry" id="photos">
+                    <h2>Photos</h2>
+                    <p className="home-text">
+                        Thank you for being there on the best day of our lives. We would love it if you could upload any moments you captured to this link. We will also be sharing our official wedding photos here as soon as we receive them.
+                    </p>
+                    <div className="photos-cards-container">
+                        <div className="photo-album-card">
+                            <img src={PINK_FLOWER} alt="flower" className="photo-card-flower" />
+                            <h3>Guest Photos</h3>
+                            <p className="photo-card-desc">
+                                View and upload photos taken by our family and friends.
+                            </p>
+                            <a 
+                                href={GUEST_PHOTOS_ICLOUD_URL || "#photos"} 
+                                target={GUEST_PHOTOS_ICLOUD_URL ? "_blank" : undefined}
+                                rel={GUEST_PHOTOS_ICLOUD_URL ? "noreferrer" : undefined}
+                                className={`photo-album-btn ${!GUEST_PHOTOS_ICLOUD_URL ? "coming-soon" : ""}`}
+                            >
+                                {GUEST_PHOTOS_ICLOUD_URL ? "Upload & View on iCloud ↗" : "Coming Soon"}
+                            </a>
+                        </div>
+
+                        <div className="photo-album-card">
+                            <img src={PINK_FLOWER} alt="flower" className="photo-card-flower" />
+                            <h3>Photographer Photos</h3>
+                            <p className="photo-card-desc">
+                                See the official wedding gallery captured by our photographer.
+                            </p>
+                            <a 
+                                href={PHOTOGRAPHER_PHOTOS_ICLOUD_URL || "#photos"} 
+                                target={PHOTOGRAPHER_PHOTOS_ICLOUD_URL ? "_blank" : undefined}
+                                rel={PHOTOGRAPHER_PHOTOS_ICLOUD_URL ? "noreferrer" : undefined}
+                                className={`photo-album-btn ${!PHOTOGRAPHER_PHOTOS_ICLOUD_URL ? "coming-soon" : ""}`}
+                            >
+                                {PHOTOGRAPHER_PHOTOS_ICLOUD_URL ? "View Photographer Album ↗" : "Coming Soon"}
+                            </a>
+                        </div>
+                    </div>
                 </section>
             </div>
             
@@ -480,7 +519,7 @@ function Home() {
                 <section className="row-entry" id="venue">
                     <h2>Venue</h2>
                     <p className="home-text">
-                        Our wedding ceremony and reception will be held at the beautiful <strong>Sunken Gardens</strong> (Oak Pavilion & North Lawn) in St. Petersburg, Florida.
+                        Our wedding ceremony and reception were held at the beautiful <strong>Sunken Gardens</strong> (Oak Pavilion & North Lawn) in St. Petersburg, Florida.
                     </p>
                     <div className="venue-map-container" style={{"margin": "1.5em auto", "maxWidth": "600px", "width": "100%", "padding": "0 20px", "boxSizing": "border-box"}}>
                         <iframe 
@@ -493,141 +532,6 @@ function Home() {
                             title="Sunken Gardens Map"
                         ></iframe>
                     </div>
-
-                    <div className="venue-details-container stacked">
-                        <div className="venue-card">
-                            <h3>Timeline</h3>
-                            <div className="venue-timeline-horizontal">
-                                <div className="venue-timeline-line"></div>
-                                <div className="venue-timeline-items">
-                                    <div className="venue-timeline-item-node">
-                                        <span className="venue-time">4:30 PM</span>
-                                        <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
-                                        <span className="venue-event">Doors Open</span>
-                                    </div>
-                                    <div className="venue-timeline-item-node">
-                                        <span className="venue-time">5:00 PM</span>
-                                        <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
-                                        <span className="venue-event">Ceremony Begins</span>
-                                    </div>
-                                    <div className="venue-timeline-item-node">
-                                        <span className="venue-time">5:30 PM</span>
-                                        <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
-                                        <span className="venue-event">Cocktail Hour</span>
-                                    </div>
-                                    <div className="venue-timeline-item-node">
-                                        <span className="venue-time">6:30 PM</span>
-                                        <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
-                                        <span className="venue-event">Dinner</span>
-                                    </div>
-                                    <div className="venue-timeline-item-node">
-                                        <span className="venue-time">8:00 PM</span>
-                                        <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
-                                        <span className="venue-event">Dancing</span>
-                                    </div>
-                                    <div className="venue-timeline-item-node">
-                                        <span className="venue-time">10:00 PM</span>
-                                        <img src={PINK_FLOWER} alt="flower" className="venue-flower-bullet" />
-                                        <span className="venue-event">Reception Ends</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="venue-card guest-rules-interactive-container" id="venue-rules-container">
-                            <h3>Guest Info & Rules</h3>
-                            <div className="rules-interactive-layout">
-                                {/* Left side: Topics list */}
-                                <div className="rules-topics-list">
-                                    {GUEST_RULES.map((rule, idx) => (
-                                        <button
-                                            key={idx}
-                                            className={`rule-topic-btn ${activeRuleIndex === idx ? 'active' : ''}`}
-                                            onMouseEnter={() => setActiveRuleIndex(idx)}
-                                            onClick={() => setActiveRuleIndex(idx)}
-                                        >
-                                            <img src={PINK_FLOWER} alt="flower" className="rule-btn-flower" />
-                                            {rule.title}
-                                        </button>
-                                    ))}
-                                </div>
-                                
-                                {/* Right side: Active rule content block */}
-                                <div className="rules-content-display" key={activeRuleIndex}>
-                                    <h4 className="rules-content-title">{GUEST_RULES[activeRuleIndex].title}</h4>
-                                    <p className="rules-content-text">{GUEST_RULES[activeRuleIndex].content}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            {separator}
-            <div className="row">
-                <section className="row-entry" id="travel">
-                    <h2>Travel and Accomodations</h2>
-                    <div className="hotel-cards-container">
-                        {HOTELS.map((hotel, idx) => (
-                            <a 
-                                href={hotel.website} 
-                                target="_blank" 
-                                rel="noreferrer" 
-                                className="hotel-card" 
-                                key={idx}
-                            >
-                                <div className="hotel-card-image-container">
-                                    <img 
-                                        src={hotel.image} 
-                                        alt={hotel.name} 
-                                        className="hotel-card-image"
-                                    />
-                                </div>
-                                <h3>{hotel.name}</h3>
-                                <div className="hotel-distance">📍 {hotel.distance}</div>
-                                <div className="hotel-link">Visit Website ↗</div>
-                            </a>
-                        ))}
-                    </div>
-
-                    <div className="booking-buttons-group">
-                        <a 
-                            href="https://www.priceline.com/relax-ui/listings?searchType=NEARBY&destination=68319&checkIn=20261017&checkOut=20261018&rooms=1&adults=2" 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className="booking-partner-btn priceline-btn"
-                        >
-                            <img src={require("../../assets/hotels/priceline.png")} alt="Priceline" className="booking-partner-logo" />
-                            <span>Book on Priceline.com</span>
-                        </a>
-                        <a 
-                            href="https://www.expedia.com/Hotel-Search?destination=Sunken%20Gardens%2C%20St.%20Petersburg%2C%20Florida%2C%20United%20States%20of%20America&regionId=503017&latLong=27.789968%2C-82.63712&flexibility=0_DAY&d1=2026-10-17&startDate=2026-10-17&d2=2026-10-18&endDate=2026-10-18&adults=2&rooms=1&typeaheadCollationId=b039e2fa-932b-4477-beec-636351a0e9d4&sort=RECOMMENDED&previousRegionId=503017&theme=&userIntent=&semdtl=&categorySearch=&useRewards=false" 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className="booking-partner-btn expedia-btn"
-                        >
-                            <img src={require("../../assets/hotels/expedia.png")} alt="Expedia" className="booking-partner-logo" />
-                            <span>Book on Expedia.com</span>
-                        </a>
-                    </div>
-                </section>
-            </div>
-
-            {separator}
-            <div className="row">
-                <section className="row-entry" id="rsvp">
-                    <h2>RSVP</h2>
-                    <p className="home-text">
-                        We would love to celebrate our special day with you! Please let us know if you can make it by September 27th, 2026.
-                    </p>
-                    <div className="rsvp-card">
-                        <p className="rsvp-instructions">
-                            Click to fill out your RSVP details.
-                        </p>
-                        <button onClick={() => setIsRsvpModalOpen(true)} className="rsvp-button-trigger">
-                            RSVP
-                        </button>
-                    </div>
                 </section>
             </div>
 
@@ -636,8 +540,8 @@ function Home() {
                 <section className="row-entry" id="registry">
                     <h2>Registry</h2>
                     <p className="home-text">
-                        Your presence at our wedding is the greatest gift of all, and please do not feel obligated to give anything. 
-                        However, if you would like to honor us with a gift, a financial contribution toward our future together would be warmly appreciated.
+                        Having you celebrate our wedding with us was the greatest gift of all! 
+                        For those who have asked or would still like to honor us with a gift, a financial contribution toward our future together is warmly appreciated.
                     </p>
                     <div className="registry-card">
                         <h3>Zelle Information</h3>
@@ -858,12 +762,12 @@ function Home() {
                         </button>
                         <div className="welcome-modal-content">
                             <img src={PINK_FLOWER} alt="flower" className="welcome-flower" />
-                            <h3>Welcome, {welcomeGuestName}!</h3>
+                            <h3>Thank You, {welcomeGuestName}!</h3>
                             <p className="welcome-text-msg">
-                                We are so honored and excited to share our special day with you.
+                                Thank you so much for celebrating our special day with us!
                             </p>
                             <p className="welcome-text-sub">
-                                Please explore our wedding details below, and RSVP online when you are ready!
+                                We are so grateful to have shared these memories with you.
                             </p>
                             <button 
                                 className="welcome-close-btn" 
