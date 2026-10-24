@@ -476,7 +476,7 @@ function Home() {
                                 rel={GUEST_PHOTOS_ICLOUD_URL ? "noreferrer" : undefined}
                                 className={`photo-album-btn ${!GUEST_PHOTOS_ICLOUD_URL ? "coming-soon" : ""}`}
                             >
-                                {GUEST_PHOTOS_ICLOUD_URL ? "Upload & View on iCloud ↗" : "Coming Soon"}
+                                {GUEST_PHOTOS_ICLOUD_URL ? "Upload & View on iCloud" : "Coming Soon"}
                             </a>
                         </div>
 
